@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Video + output (lớn, tự sinh lại được)
+data/video/
+data/videos/
+data/output/
+data/cache/
+*.mp4
+
+# ===== DỮ LIỆU BTC PHÁT (tải lại được từ link trong docs/Thong tin vong So tuyen) =====
+# KHÔNG commit: 307.000+ file, vài GB. `git add .` đứng hàng chục phút vì băm hash hết chỗ này.
+# ⚠️ Git KHÔNG hỗ trợ comment cuối dòng — mọi chú thích phải nằm trên dòng RIÊNG.
+# data/keyframes/ = 127.592 ảnh keyframe BTC
+data/keyframes/
+# data/objects-aic25-b1/ = 177.321 file JSON object detection
+data/objects-aic25-b1/
+# 873 file .npy CLIP feature
+data/clip-features-32-aic25-b1/
+# 873 file CSV map n <-> frame_idx
+data/map-keyframes-aic25-b1/
+# 873 file JSON metadata YouTube
+data/media-info-aic25-b1/
+
+# ===== SẢN PHẨM TỰ SINH (chạy lại được bằng scripts/) =====
+# data/btc_format/ = 173.000 ảnh đóng gói chuẩn BTC (hardlink, sinh lại bằng package_btc_format.py)
+data/btc_format/
+# data/kfpipe/ = output pipeline BEiT-3 bên nhánh test
+data/kfpipe/
+# data/vectordb/ = FAISS index + metadata
+data/vectordb/
+
+# GIỮ bộ đo tự tạo (nhỏ, công sức người, KHÔNG tải lại được)
+!data/eval/
+!data/eval/**
+
+# Model weights (lớn)
+models/
+
+# Log chạy
+*.log
+
+# ===== SECRETS - TUYỆT ĐỐI KHÔNG commit =====
+.env
+data/key_accounts.json
+data/proxies.txt
+proxies.txt
+
+# ===== TAI LIEU PDF (nang, tai lai duoc tu link BTC) =====
+# docs/2025.pdf 73 MB + docs/2026.pdf 34 MB da bi go khoi lich su bang git filter-branch.
+# Chan lai de khong vo tinh commit nua.
+*.pdf
+
+# ===== CAU HINH CONG CU THEO MAY — TUNG CHUA API KEY, TUYET DOI KHONG COMMIT =====
+.claude/settings.json
+.claude/settings.local.json

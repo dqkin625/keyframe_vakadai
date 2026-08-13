@@ -1,0 +1,212 @@
+# ============================================================================
+# Cấu hình pipeline: Video -> Shots -> Keyframes -> Captions -> JSONL
+# ============================================================================
+
+paths:
+  video_dir: "data/video"           # thư mục video đầu vào (.mp4) - quét ĐỆ QUY
+  output_dir: "data/output"         # nơi lưu keyframe + metadata jsonl
+  keyframe_subdir: "keyframes"      # ảnh keyframe lưu ở output_dir/keyframes/<video_id>/
+
+# ---------------------------------------------------------------------------
+# 1) PHÁT HIỆN SHOT (shot boundary detection)
+# ---------------------------------------------------------------------------
+shot_detection:
+  # detector: "autoshot" (mặc định, tốt nhất) | "transnetv2" | "pyscenedetect" (nhẹ, không cần model)
+  detector: "autoshot"
+  autoshot_prob_threshold: 0.5      # ngưỡng xác suất chuyển cảnh cho AutoShot
+  gpu_decode: true                  # giải mã video trên GPU (NVDEC) - nhanh 4-6x; false = CPU
+  threshold: 27.0                   # [PySceneDetect] ContentDetector threshold (thấp = nhạy hơn)
+  min_scene_len: 15                 # [PySceneDetect] số frame tối thiểu 1 shot
+  transnet_prob_threshold: 0.5      # [TransNetV2] ngưỡng xác suất chuyển cảnh
+
+# ---------------------------------------------------------------------------
+# 2) TRÍCH KEYFRAME TRONG MỖI SHOT (frame sampling)
+# ---------------------------------------------------------------------------
+keyframe:
+  strategy: "action"                # "action": lấy keyframe THEO SHOT phục vụ caption HÀNH ĐỘNG (mặc định)
+  # ═══ CHẾ ĐỘ PHỦ DÀY (2026-08-11) — mục tiêu 4-5x số keyframe của BTC ═══
+  # Bộ cũ (10 / 0.9 / 5.0 / 7.0 / 0.15) cho ~0.94x BTC trên L23 vì BA tầng bóp nghẹt nối nhau:
+  #   1. shot có mean_mag < action_still_level -> ĐÚNG 2 keyframe bất kể dài bao nhiêu
+  #   2. dedup_keyframes(0.9) giết sạch frame mà lượt bù vừa chèn (cảnh tĩnh -> giống nhau)
+  #   3. action_max_gap_min_diff=0.15 chặn luôn đường khôi phục
+  # -> 51% shot chỉ còn 1-2 keyframe, chiếm 29.6% thời lượng. Xem docs/METHODS.md muc L.
+  # ĐÒN BẨY CHÍNH là action_max_gap_sec, KHÔNG phải keyframe_dedup_threshold (đã đo A/B).
+  keyframes_per_shot: 60            # ← 10. Trần cũ chặn cứng ở 3.22x BTC, không thể đạt 4-5x
+  keyframe_dedup: true              # LỌC keyframe lưu lại phải THẬT SỰ khác nhau
+  keyframe_dedup_threshold: 0.05    # ← 0.9. Gần như tắt lọc trùng: index dày tốt cho recall.
+                                    #   ⚠ Khử trùng phải làm ở BỘ RẢI ĐÁP ÁN (R@k lấy MAX, nộp trùng = 0 điểm)
+  keyframe_signal: "motion"         # tín hiệu chọn keyframe: "motion" (optical flow, mặc định) | "histogram"
+  action_motion_step: 1.0           # ← 5.0. Flow tích lũy để có THÊM 1 keyframe. Thấp -> nhiều keyframe hơn.
+  action_still_level: 0.5           # [motion] dưới mức này coi là "gần như tĩnh"
+  action_hint_segments: 3           # [motion] số đoạn tóm tắt trong "motion hint" đưa vào prompt
+  action_change_threshold: 0.30     # [histogram] chỉ giữ frame khác > mức này
+  action_min_gap_sec: 0.3           # ← 0.4. 2 keyframe cách nhau tối thiểu (giây)
+  action_max_gap_sec: 1.2           # ← 7.0. ĐÒN BẨY CHÍNH. TRẦN lỗ hổng trong 1 shot (0 = tắt).
+                                    #   Dò trên video YẾU NHẤT (L23_V001): 1.5s->3.84x BTC (hụt),
+                                    #   1.2s->4.22x, 1.0s->4.84x, 0.8s->5.64x. Chọn 1.2 để video
+                                    #   thưa nhất vẫn vượt 4x mà video dày không vọt quá xa.
+                                    #   Đây là thứ ép phủ đều cảnh TĨNH — nơi mất mát lớn nhất.
+                                    #   CỐ Ý được vượt keyframes_per_shot.
+  action_max_gap_min_diff: 0.02     # ← 0.15. Chỉ chèn frame phủ lỗ hổng nếu KHÁC frame vừa giữ
+                                    #   > ngưỡng này. Dò trên L21_V018 (BTC tự nó 0.7% cặp trùng khít):
+                                    #     0.0  -> 1362 kf (4.70x) nhưng 18.4% TRÙNG KHÍT, lỗ hổng 1.4s
+                                    #     0.02 -> 1049 kf (3.62x),  5.6% trùng,  lỗ hổng 18.6s
+                                    #     0.05 -> 959 kf (3.31x),   2.5% trùng,  lỗ hổng 18.6s
+                                    #   ĐÁNH ĐỔI CỨNG, không có điểm giữa: cảnh tĩnh gần như không
+                                    #   biến thiên nên MỌI ngưỡng dương đều chặn đúng chỗ cần bù nhất.
+                                    #   Chọn 0.02: lỗ hổng 18.6s nằm trong shot TĨNH — 1 keyframe cho
+                                    #   18s cảnh không đổi là ĐỦ cho retrieval; thêm ảnh giống hệt
+                                    #   chỉ phình index chứ không tìm ra được gì hơn.
+  merge_similar_shots: true         # GỘP shot liền kề gần-giống nhau -> giảm cắt vụn cảnh liên tục
+  merge_shot_rms: 0.15              # RMS (0-1) tối đa để coi 2 shot liền kề là "gần giống" -> gộp
+  merge_shot_max_sec: 20.0         # KHÔNG gộp nếu shot kết quả dài quá ngần này giây
+  # Strategy khác (theo shot): middle | uniform | adaptive | clip_reldiff (Vortex) | dake_per_shot
+  # Strategy toàn video (CCTV, POV): dake (U-CESE, không cần shot detection)
+  # ---- CẮT SHOT THÀNH CHUỖI SỰ KIỆN (nguyên liệu TRAKE) — src/frame_sampling/event_segmenter.py ----
+  # Cắt NHỎ HƠN shot để bắt từng khoảnh khắc trong chuỗi hành động; tái dùng optical flow (chi phí ~0).
+  event_segmentation: true          # bật/tắt cắt sự kiện (tắt -> mỗi shot = 1 sự kiện)
+  event_pa_weight: 0.5              # trộn a*PA(ngoại hình, GEBD ICCV2021) + (1-a)*TURN(động học, tự thiết kế).
+                                    #   0.5 = cân bằng; hạ 0.3 nếu đề thiên về động tác cơ thể.
+  event_boundary_threshold: 0.25    # ngưỡng (0-1) nhận 1 cực đại là ranh giới. CAO -> ít sự kiện, chắc hơn.
+  # NGƯỠNG SÀN — chống "bịa sự kiện ở shot đứng yên": chuẩn hoá chia cho max(biên_độ, sàn).
+  event_pa_floor: 0.03
+  event_turn_floor: 0.8
+  event_min_sec: 0.4                # 2 ranh giới phải cách nhau tối thiểu ngần này giây
+  event_max_per_shot: 8             # trần số sự kiện / shot (chặn vụn ở cảnh rung/nhiễu)
+  event_window_sec: 0.5             # nửa cửa sổ "trước/sau" khi so sánh (PA + TURN)
+  event_smooth_sigma: 1.0           # làm trơn Gauss đường cong trước khi tìm cực đại (chống nhiễu)
+  # Gom shot LIỀN KỀ cùng bối cảnh thành SCENE -> khớp chuỗi TRAKE ở cấp SCENE.
+  event_scene_grouping: true
+  event_scene_threshold: 0.12       # RMS chênh lệch ảnh xám 2 shot liền nhau (0-1). NHỎ -> ít gộp. Heuristic.
+  event_scene_max_sec: 60.0         # trần thời lượng 1 scene (chống gộp dây chuyền cả bản tin)
+
+  uniform_step: 24                  # [uniform] lấy 1 frame mỗi 24 frame
+  adaptive_max_per_shot: 3          # [adaptive] số keyframe tối đa / shot
+  adaptive_hist_threshold: 0.35     # [adaptive] ngưỡng khác biệt hình ảnh để thêm keyframe (cao = khắt khe)
+  adaptive_min_gap_sec: 1.0         # [adaptive] 2 keyframe cách nhau tối thiểu (giây)
+  jpeg_quality: 90
+  resize_long_side: 720             # resize cạnh dài về px trước khi lưu (0 = giữ nguyên)
+
+  # ---- DAKE gốc (U-CESE arxiv 2605.23274, Algorithm 1 tr.6 + tham số tr.10) ----
+  dake_ratio: 0.02                  # rho - tỉ lệ frame giữ làm keyframe (paper: 0.02)
+  dake_min_window_sec: 2.0          # ép mỗi cửa sổ 2s có >=1 keyframe (paper: 2*fps)
+  dake_size_long_side: 192          # thu nhỏ trước khi đo JPEG (nhỏ hơn = nhanh hơn)
+  dake_use_abs: false               # false = bám đúng paper; true = dùng |steepness|
+  dake_workers: 0                   # số nhân CPU chạy song song (0 = tự động: số nhân - 2)
+
+  # ---- Vortex two-stage (arxiv 2606.19682 tr.5) - cần: pip install open_clip_torch ----
+  clip_step: 8                      # lấy embedding mỗi 8 frame (paper: every eighth frame)
+  clip_rel_diff_threshold: 0.4      # giữ frame khi rel_diff > 0.4 (paper: 0.4)
+  clip_model: "ViT-L-14-quickgelu"  # paper: ViT-L-14-quickgelu
+  clip_pretrained: "dfn2b"          # paper: pre-trained with DFN2B
+  clip_device: "cuda"
+
+# ---------------------------------------------------------------------------
+# 3b) EMBEDDING (gói output sẵn-sàng-index cho Milvus): CLIP keyframe + caption embedding
+# ---------------------------------------------------------------------------
+embedding:
+  enabled: true
+  device: "auto"                            # auto: GPU khi caption API/mock; CPU khi caption Qwen local
+  dedup_clip_model: "ViT-B-32"              # CLIP cho keyframe vector (= model dedup)
+  dedup_clip_pretrained: "laion2b_s34b_b79k"
+  caption_emb_model: "intfloat/multilingual-e5-base"   # ST đa ngôn ngữ (có tiếng Việt)
+  caption_emb_batch: 64
+  siglip: true                              # embedding ảnh THỨ 2 (fine-grained) để RRF fusion với CLIP
+  siglip_model: "ViT-B-16-SigLIP2"
+  siglip_pretrained: "webli"
+
+# ---------------------------------------------------------------------------
+# 3) SINH CAPTION CHO SHOT (Vision-Language Model)
+# ---------------------------------------------------------------------------
+caption:
+  # level: "shot" (1 caption/shot, video đã dựng) | "keyframe" (CCTV/POV) | "auto" (theo mật độ shot)
+  inject_motion_hint: false         # chèn "motion hint" (optical flow) vào prompt. TẮT vì flow chủ yếu đo CAMERA.
+
+  shot_video: true                  # true = gửi clip video/shot (fallback ẢNH nếu lỗi) - hiểu motion THẬT
+  video_fps: 0.5                    # fps lấy mẫu clip. GIỮ 0.5: nâng fps chỉ thêm ~17% mà tốn 2-3x token.
+  video_max_frames: 4               # trần frame tuyệt đối/clip (chặn shot dài)
+  video_max_side: 320               # thu nhỏ cạnh dài clip (px) -> nhẹ + nhanh upload
+  video_fastseek_min_sec: 30        # shot dài hơn mức này -> FAST-SEEK; ngắn hơn -> giải mã 1 lượt
+  # ⚠️ ĐÃ BỎ giới hạn TOKEN (TPM) hoàn toàn: chỉ giới hạn RPM per bucket + load balance + cooldown khi 429.
+
+  # --- GÁN NHÃN HÀNH ĐỘNG cho từng SỰ KIỆN (events.jsonl) — request PHỤ ngoài caption shot ---
+  event_labels: true               # CÁCH 2 (TRAKE): VLM gán nhãn action NGẮN cho từng sự kiện (1 ảnh/sự kiện).
+                                    # Điền trường `action` trong events.jsonl. Chạy riêng:
+                                    # python scripts/label_events.py data/output/<vid>
+
+  level: "shot"                     # "shot": 1 caption/shot mô tả HÀNH ĐỘNG (gửi nhiều keyframe/1 request)
+  auto_shots_per_min: 2.0           # < ngưỡng này -> video quay liên tục -> keyframe (chỉ khi level=auto)
+  context_window: 2                 # số keyframe trước/sau làm ngữ cảnh (U-CESE tr.6, khi dedup=false)
+
+  # --- TỐI ƯU thời gian caption (khi level=keyframe) ---
+  dedup: true                       # gom cụm keyframe trùng nội dung, chỉ caption đại diện (Vortex tr.5)
+  dedup_threshold: 0.10             # rel_diff cosine; cao hơn = ít cụm hơn = nhanh hơn
+  dedup_clip_model: "ViT-B-32"      # CLIP dùng để dedup (embedding này tái dùng cho Milvus)
+  dedup_clip_pretrained: "laion2b_s34b_b79k"
+  caption_batch_size: 8             # số keyframe/lượt generate (batch GPU); giảm nếu thiếu VRAM
+
+  backend: "gemma"                  # "qwen3-vl" (local) | "gemma" (API free, nhanh) | "blip" | "mock"
+                                    # ⚠️ CHỈ backend "gemma" mới có shot_video; "qwen3-vl" -> bỏ qua mọi api_*.
+  gemma_model: "gemma-4-26b-a4b-it"     # model chính (dùng cho validate + caption theo shot)
+  gemma_models:                          # XEN KẼ 2 model -> mỗi model RPD RIÊNG -> gấp đôi quota ngày
+    - "gemma-4-26b-a4b-it"              # RPD 14.400/key, RPM 30 (bản a4b MoE - nhanh)
+    - "gemma-4-31b-it"                 # RPD 14.400/key, RPM 30 -> tổng 28.800 RPD/key
+  api_max_workers: 3                # hệ số tổng luồng pool (workers × bucket); load balancer tự rải.
+  api_auto_keys: true               # [KHÔNG CÒN DÙNG] giữ để tương thích config cũ, không ảnh hưởng hành vi
+  api_log_dist: true                # in thống kê phân phối tải theo key/model sau mỗi batch
+  api_validate_keys: false          # TẮT: validate tuần tự tốn ~108s/khởi động. Key hỏng vẫn tự loại ở runtime.
+                                    #   Rà key trước: python scripts/add_gemma_key.py --check-only
+  api_rpm_per_model: 28             # RPM mỗi bucket (1 key × 1 model) = trần Google. _RateLimiter cửa sổ trượt.
+  api_rpd_per_model: 14400          # RPD mỗi bucket (Gemma free = 14.400); bucket cạn ngày bị loại tới reset 24h
+  api_cooldown_sec: 20              # khi 1 bucket bị 429 -> cho NGHỈ ngần này giây (né retry storm)
+  api_max_inflight: 60              # cap TỔNG luồng đồng thời (0 = không cap). Ít luồng -> ít burst -> ít 429.
+  api_per_account_inflight: 4       # số request ĐỒNG THỜI tối đa/account -> chống burst per-account (429 THẬT)
+  api_per_account_min_gap_sec: 5   # giãn cách tối thiểu giữa 2 request tới CÙNG account (giây)
+  api_max_retries: 3                # số lần GỌI API tối đa cho 1 request. Chống RETRY-STORM (kèm backoff).
+  fallback_frames: 3               # khi caption VIDEO lỗi -> fallback ẢNH dùng ngần này frame
+  model_id: "Qwen/Qwen3-VL-4B-Instruct"     # bản 4B chạy vừa GPU 6GB khi 4-bit
+  load_4bit: true                   # nén 4-bit (bitsandbytes) để vừa VRAM; false nếu GPU >=12GB
+  device: "cuda"                    # "cuda" | "cpu"
+  dtype: "float16"
+  max_new_tokens: 320               # caption chi tiết + OCR -> cần nhiều token hơn
+  frames_per_shot: 10               # số keyframe TỐI ĐA gửi trong 1 request caption/shot (dư -> rải đều)
+  recap_memory: false               # false -> shot ĐỘC LẬP -> caption SONG SONG (nhanh). true = ReCap (tuần tự).
+  recap_memory_chars: 400           # độ dài tối đa chuỗi memory tóm tắt các shot trước
+  ocr: true                         # tách riêng chữ trên hình (song ngữ Việt-Anh) qua Qwen
+  input_max_side: 512               # thu nhỏ ảnh đầu vào (cạnh dài px) để giữ VRAM 6GB an toàn
+  language: "vi"
+  prompt: |
+    Bạn là hệ thống lập chỉ mục video cho công cụ tìm kiếm. Hãy mô tả ảnh bằng TIẾNG VIỆT,
+    THẬT CHI TIẾT và KHÁCH QUAN để sau này tìm lại được bằng câu truy vấn. Nêu rõ:
+    - Con người: số lượng, giới tính, độ tuổi ước lượng, trang phục (màu sắc, kiểu), tư thế, hành động.
+    - Bối cảnh: trong nhà/ngoài trời, loại địa điểm, đồ vật nổi bật, phương tiện.
+    - Hành động và tương tác đang diễn ra.
+    Viết 2-4 câu liền mạch, chỉ mô tả điều NHÌN THẤY, tuyệt đối không suy diễn hay bịa thêm.
+    Sau phần mô tả, XUỐNG DÒNG và ghi đúng định dạng:
+    TEXT: <liệt kê NGUYÊN VĂN mọi chữ xuất hiện trên hình (giữ nguyên tiếng Việt HOẶC tiếng Anh),
+    cách nhau bằng " | ". Nếu không có chữ nào thì ghi: (không có)>
+
+  # prompt RIÊNG cho caption theo SHOT: TẬP TRUNG hành động của NGƯỜI, không tả máy quay.
+  shot_prompt: |
+    Đây là MỘT cảnh quay (shot) theo thứ tự thời gian. Hãy mô tả bằng TIẾNG VIỆT HÀNH ĐỘNG và
+    CHUYỂN ĐỘNG CỦA NHỮNG NGƯỜI (và phương tiện) TRONG KHUNG HÌNH — họ ĐANG LÀM GÌ và di chuyển
+    ra sao theo thời gian.
+    ❗QUAN TRỌNG: TUYỆT ĐỐI KHÔNG mô tả chuyển động của MÁY QUAY/CAMERA. Không viết những câu như
+    "camera lia trái/phải", "máy quay di chuyển", "góc nhìn mở rộng"... Dù cả khung hình có dịch
+    chuyển (do máy quay), hãy BỎ QUA điều đó và chỉ tả HÀNH ĐỘNG CỦA NGƯỜI/vật.
+    Với từng người hoặc nhóm người ĐÁNG CHÚ Ý, nêu rõ:
+    - ĐANG LÀM GÌ: đi bộ, chạy, đứng, ngồi, dừng lại, cúi xuống, cầm/mang/đẩy/kéo đồ, chỉ tay,
+      chụp ảnh, mua bán, ăn uống, nói chuyện, bắt tay, ôm, lên/xuống xe, băng qua đường...
+    - DI CHUYỂN theo HƯỚNG nào (người này đi từ TRÁI sang PHẢI, tiến LẠI GẦN, quay người, RỜI khỏi
+      khung, chạy tới...) và TRÌNH TỰ trước–sau (ban đầu làm gì → rồi làm gì → kết thúc).
+    - TƯƠNG TÁC: giữa người với người, với đồ vật hoặc phương tiện.
+    ❗Đây là VIDEO gồm NHIỀU KHUNG theo thời gian, KHÔNG phải một ảnh tĩnh. BẮT BUỘC mô tả DIỄN BIẾN
+    theo trình tự: dùng các từ như "ban đầu / lúc đầu", "rồi / sau đó / tiếp theo", "cuối cùng" để
+    cho thấy hành động THAY ĐỔI ra sao từ đầu đến cuối cảnh. Nếu qua các khung mà hành động có đổi
+    (đứng rồi đi, đi tới rồi dừng, cầm lên rồi đặt xuống...) thì PHẢI nêu rõ sự thay đổi đó.
+    Chỉ nêu bối cảnh vừa đủ để hiểu; TRỌNG TÂM là HÀNH ĐỘNG CỦA NGƯỜI. Viết 2–4 câu mạch lạc, chỉ tả
+    điều NHÌN THẤY, không bịa. Nếu trong khung KHÔNG có người thì mới tả chuyển động của vật/phương tiện.
+    Nếu suốt cảnh mọi thứ ĐỨNG YÊN thật thì nói rõ là tĩnh, KHÔNG bịa ra chuyển động.
+    Sau phần mô tả, XUỐNG DÒNG và ghi đúng định dạng:
+    TEXT: <mọi chữ xuất hiện trên hình trong cảnh, cách nhau bằng " | ", giữ nguyên Việt/Anh.
+    Không có thì ghi: (không có)>

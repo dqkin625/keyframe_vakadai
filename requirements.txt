@@ -1,0 +1,39 @@
+# ---- Core ----
+numpy>=1.24
+opencv-python>=4.9
+Pillow>=10.0
+tqdm>=4.66
+pyyaml>=6.0
+
+# ---- Shot boundary / frame sampling ----
+scenedetect>=0.6.4              # PySceneDetect - detector nhẹ, không cần weights (backup)
+transnetv2-pytorch>=1.0.5       # TransNetV2 (+ dùng lại hàm predictions_to_scenes cho AutoShot)
+einops>=0.7                     # AutoShot - detector MẶC ĐỊNH (kiến trúc trong src/frame_sampling/autoshot_arch.py)
+#   AutoShot không có package pip: code kiến trúc lấy từ github.com/wentaozhu/AutoShot,
+#   weights ckpt_0_200_0.pth tự tải từ HuggingFace (backseollgi/AutoShot) vào models/ khi chạy lần đầu.
+imageio-ffmpeg>=0.5             # ffmpeg ĐÓNG GÓI TRONG VENV (TransNetV2 cần) - không phải cài ffmpeg vào máy
+
+# ---- Captioning (Vision-Language Model) ----
+torch>=2.2                       # install the CUDA build from pytorch.org for GPU
+# LƯU Ý GPU: nếu driver NVIDIA cũ (vd 528.x, chỉ hỗ trợ CUDA 12.1) thì torch cu126 sẽ lỗi
+# "cudaErrorDevicesUnavailable". Cài đúng bản cu121:
+#   pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+# Driver mới (>=560) thì dùng cu126/cu128 bình thường.
+transformers>=4.49               # Qwen2.5-VL support landed in 4.49+
+accelerate>=0.30
+bitsandbytes>=0.50              # nạp Qwen3-VL 4-bit để vừa GPU 6GB (bắt buộc cho backend qwen3-vl)
+qwen-vl-utils>=0.0.8            # helper cho Qwen2.5-VL (Qwen3-VL dùng processor trực tiếp)
+# BLIP fallback không cần gì thêm ngoài transformers.
+# GPU decode video (NVDEC) dùng ffmpeg bundled trong imageio-ffmpeg - không cần cài thêm.
+
+# ---- Embedding output (VisualDB + TextualDB, sẵn-sàng-index cho Milvus) ----
+# open_clip: CLIP image embedding keyframe + dedup keyframe (strategy clip_reldiff, Vortex tr.5)
+open_clip_torch>=2.24
+# Caption embedding: multilingual-e5-base gọi qua transformers TRỰC TIẾP (đã có ở trên).
+#   KHÔNG cài sentence-transformers: nó kéo scikit-learn+scipy mà máy này CHẶN DLL scipy
+#   (Application Control policy) -> vỡ cả transformers. Encode e5 = AutoModel + mean pooling.
+
+# ---- Databases (kiến trúc vô địch: Milvus + Elasticsearch, xem src/db/README.md) ----
+pymilvus>=2.4                    # vector CLIP của keyframe (ANN ngữ nghĩa)
+elasticsearch>=8.11             # caption/OCR/metadata cấp shot (full-text tiếng Việt + filter)
+# qdrant-client>=1.9            # (tuỳ chọn) thay thế 1-hệ-thống cho Milvus nếu muốn gọn

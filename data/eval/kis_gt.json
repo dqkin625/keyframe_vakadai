@@ -1,0 +1,3529 @@
+{
+  "meta": {
+    "note": "Ground truth KIS tự tạo. `query` do bước 2 sinh từ ẢNH (không nhìn caption).",
+    "n_samples": 100,
+    "seed": 42,
+    "tolerances": {
+      "tol5": 5,
+      "tol30": 30,
+      "tol90": 90
+    },
+    "gt_range_caveat": "BTC không công bố bề rộng [s,e] cố định. Ví dụ trong thể lệ: KIS [500,510]=11 frame, Q&A [800,900]=101 frame. Luôn báo cáo điểm ở CẢ các mức, đừng chốt một mức.",
+    "n_with_query": 100,
+    "n_needs_review": 5,
+    "distinct_hist": {
+      "0": 0,
+      "1": 2,
+      "2": 3,
+      "3": 11,
+      "4": 48,
+      "5": 36
+    },
+    "by_source": {
+      "gemma": 30,
+      "vlm": 70
+    }
+  },
+  "samples": [
+    {
+      "query_id": "kis_001",
+      "type": "KIS",
+      "query": "Tìm video món xào gồm xúc xích thái lát, hành tây tím, ớt chuông vàng và xanh đặt trên đĩa màu hồng, bày trên khay gỗ cùng một bát nước chấm nhỏ màu trắng phía sau.",
+      "source": "gemma",
+      "gt_video": "L26_V054",
+      "gt_frame": 6234,
+      "gt_ranges": {
+        "tol5": [
+          6229,
+          6239
+        ],
+        "tol30": [
+          6204,
+          6264
+        ],
+        "tol90": [
+          6144,
+          6324
+        ],
+        "kf_span": [
+          6222,
+          6262
+        ]
+      },
+      "keyframe_n": 116,
+      "keyframe_file": "data/keyframes/L26_V054/116.jpg",
+      "pts_time": 249.36,
+      "fps": 25.0,
+      "n_keyframes": 142,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Mô tả chi tiết các thành phần món ăn cùng màu sắc đặc trưng của đĩa và vật dụng xung quanh.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_002",
+      "type": "KIS",
+      "query": "Tìm video về một người đàn ông mặc áo thun xanh Nike, đội mũ vải màu xanh và đeo khẩu trang trắng đang cúi người bên cạnh một chiếc máy bằng inox có màn hình điều khiển.",
+      "source": "gemma",
+      "gt_video": "L28_V017",
+      "gt_frame": 5118,
+      "gt_ranges": {
+        "tol5": [
+          5113,
+          5123
+        ],
+        "tol30": [
+          5088,
+          5148
+        ],
+        "tol90": [
+          5028,
+          5208
+        ],
+        "kf_span": [
+          5072,
+          5124
+        ]
+      },
+      "keyframe_n": 148,
+      "keyframe_file": "data/keyframes/L28_V017/148.jpg",
+      "pts_time": 204.72,
+      "fps": 25.0,
+      "n_keyframes": 511,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Các chi tiết về thương hiệu áo Nike, trang phục bảo hộ và thiết bị máy móc đặc thù giúp phân biệt rõ cảnh này.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_003",
+      "type": "KIS",
+      "query": "Tìm video một người mặc áo đen đứng sau quầy gỗ có máy pha chế màu đỏ, bên trái là rèm tre và phía sau có bình hoa lớn.",
+      "source": "gemma",
+      "gt_video": "L30_V044",
+      "gt_frame": 2027,
+      "gt_ranges": {
+        "tol5": [
+          2022,
+          2032
+        ],
+        "tol30": [
+          1997,
+          2057
+        ],
+        "tol90": [
+          1937,
+          2117
+        ],
+        "kf_span": [
+          2003,
+          2068
+        ]
+      },
+      "keyframe_n": 45,
+      "keyframe_file": "data/keyframes/L30_V044/045.jpg",
+      "pts_time": 81.08,
+      "fps": 25.0,
+      "n_keyframes": 95,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Các chi tiết đặc thù như máy màu đỏ, rèm tre và bình hoa giúp phân biệt rõ cảnh quay.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_004",
+      "type": "KIS",
+      "query": "Tìm video quay từ trên cao một con sông dài, bên trái là những cánh đồng lúa xanh mướt, bên phải là dãy nhà mái trắng san sát nằm dọc theo con đường chạy cạnh bờ sông.",
+      "source": "gemma",
+      "gt_video": "L28_V008",
+      "gt_frame": 11205,
+      "gt_ranges": {
+        "tol5": [
+          11200,
+          11210
+        ],
+        "tol30": [
+          11175,
+          11235
+        ],
+        "tol90": [
+          11115,
+          11295
+        ],
+        "kf_span": [
+          11143,
+          11272
+        ]
+      },
+      "keyframe_n": 186,
+      "keyframe_file": "data/keyframes/L28_V008/186.jpg",
+      "pts_time": 448.2,
+      "fps": 25.0,
+      "n_keyframes": 411,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Mô tả chi tiết bố cục đặc trưng giữa cánh đồng lúa và dãy nhà mái trắng ven sông.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_005",
+      "type": "KIS",
+      "query": "Tìm video về các giỏ nhựa màu vàng đựng đầy những con vật nhỏ màu đen trên mặt bàn kim loại, phía bên phải là một đống lớn các con vật tương tự.",
+      "source": "gemma",
+      "gt_video": "L29_V015",
+      "gt_frame": 4320,
+      "gt_ranges": {
+        "tol5": [
+          4315,
+          4325
+        ],
+        "tol30": [
+          4290,
+          4350
+        ],
+        "tol90": [
+          4230,
+          4410
+        ],
+        "kf_span": [
+          4303,
+          4348
+        ]
+      },
+      "keyframe_n": 113,
+      "keyframe_file": "data/keyframes/L29_V015/113.jpg",
+      "pts_time": 172.8,
+      "fps": 25.0,
+      "n_keyframes": 445,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp giữa giỏ màu vàng rực và các con vật đen trên mặt bàn inox là chi tiết phân biệt rất rõ.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_006",
+      "type": "KIS",
+      "query": "Tìm video về một tác phẩm thêu tay cảnh hoàng hôn với bầu trời màu xanh vàng và thảm hoa đỏ rực trên nền vải màu xanh nhạt.",
+      "source": "gemma",
+      "gt_video": "L30_V063",
+      "gt_frame": 2903,
+      "gt_ranges": {
+        "tol5": [
+          2898,
+          2908
+        ],
+        "tol30": [
+          2873,
+          2933
+        ],
+        "tol90": [
+          2813,
+          2993
+        ],
+        "kf_span": [
+          2875,
+          2975
+        ]
+      },
+      "keyframe_n": 43,
+      "keyframe_file": "data/keyframes/L30_V063/043.jpg",
+      "pts_time": 116.12,
+      "fps": 25.0,
+      "n_keyframes": 81,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Chi tiết về kỹ thuật thêu và tổ hợp màu sắc đặc trưng của vật thể rất khó trùng lặp.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_007",
+      "type": "KIS",
+      "query": "Tìm video người đàn ông mặc áo sơ mi tím đang ngồi trước laptop, phía sau là một bảng trắng lớn trình chiếu nội dung câu hỏi trắc nghiệm tiếng Việt.",
+      "source": "gemma",
+      "gt_video": "L25_V020",
+      "gt_frame": 21085,
+      "gt_ranges": {
+        "tol5": [
+          21080,
+          21090
+        ],
+        "tol30": [
+          21055,
+          21115
+        ],
+        "tol90": [
+          20995,
+          21175
+        ],
+        "kf_span": [
+          21010,
+          21160
+        ]
+      },
+      "keyframe_n": 237,
+      "keyframe_file": "data/keyframes/L25_V020/237.jpg",
+      "pts_time": 843.4,
+      "fps": 25.0,
+      "n_keyframes": 361,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chi tiết về màu áo tím và bối cảnh bảng trắng chứa câu hỏi trắc nghiệm giúp phân biệt rõ.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_008",
+      "type": "KIS",
+      "query": "Tìm video về một người đàn ông mặc áo phông màu be có in chữ CONCEITED, đeo micro cài áo, đang nói chuyện trong không gian có nhiều tranh treo tường và đồ dùng nghệ thuật.",
+      "source": "gemma",
+      "gt_video": "L30_V052",
+      "gt_frame": 4327,
+      "gt_ranges": {
+        "tol5": [
+          4322,
+          4332
+        ],
+        "tol30": [
+          4297,
+          4357
+        ],
+        "tol90": [
+          4237,
+          4417
+        ],
+        "kf_span": [
+          4267,
+          4332
+        ]
+      },
+      "keyframe_n": 73,
+      "keyframe_file": "data/keyframes/L30_V052/073.jpg",
+      "pts_time": 173.08,
+      "fps": 25.0,
+      "n_keyframes": 126,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Chữ 'CONCEITED' trên áo là chi tiết nhận diện cực kỳ đặc biệt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_009",
+      "type": "KIS",
+      "query": "Tìm video một người đàn ông mặc áo xanh thẫm đang chỉ tay hướng dẫn bé gái buộc tóc hai bên với nơ hồng, mặc áo vàng, đứng trước bảng xanh có ghi các phép tính cộng.",
+      "source": "gemma",
+      "gt_video": "L30_V030",
+      "gt_frame": 2728,
+      "gt_ranges": {
+        "tol5": [
+          2723,
+          2733
+        ],
+        "tol30": [
+          2698,
+          2758
+        ],
+        "tol90": [
+          2638,
+          2818
+        ],
+        "kf_span": [
+          2699,
+          2791
+        ]
+      },
+      "keyframe_n": 39,
+      "keyframe_file": "data/keyframes/L30_V030/039.jpg",
+      "pts_time": 109.12,
+      "fps": 25.0,
+      "n_keyframes": 112,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Các chi tiết về nơ hồng, màu áo và nội dung bảng xanh giúp phân biệt rõ cảnh quay.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_010",
+      "type": "KIS",
+      "query": "Tìm video quay cận cảnh một bàn tay đang dùng dao lớn thái các miếng ớt màu đỏ thành sợi dài trên mặt thớt gỗ.",
+      "source": "gemma",
+      "gt_video": "L26_V063",
+      "gt_frame": 2776,
+      "gt_ranges": {
+        "tol5": [
+          2771,
+          2781
+        ],
+        "tol30": [
+          2746,
+          2806
+        ],
+        "tol90": [
+          2686,
+          2866
+        ],
+        "kf_span": [
+          2752,
+          2814
+        ]
+      },
+      "keyframe_n": 47,
+      "keyframe_file": "data/keyframes/L26_V063/047.jpg",
+      "pts_time": 111.04,
+      "fps": 25.0,
+      "n_keyframes": 140,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Mô tả cụ thể hành động, màu sắc thực phẩm và bối cảnh để phân biệt với các cảnh nấu ăn khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_011",
+      "type": "KIS",
+      "query": "Tìm video một người phụ nữ mặc áo sơ mi vàng, đeo tạp dề có dây đỏ, tay cầm túi giấy trắng có logo đỏ, đứng trong bếp có kệ trắng và cây xanh.",
+      "source": "gemma",
+      "gt_video": "L26_V198",
+      "gt_frame": 4642,
+      "gt_ranges": {
+        "tol5": [
+          4637,
+          4647
+        ],
+        "tol30": [
+          4612,
+          4672
+        ],
+        "tol90": [
+          4552,
+          4732
+        ],
+        "kf_span": [
+          4625,
+          4689
+        ]
+      },
+      "keyframe_n": 106,
+      "keyframe_file": "data/keyframes/L26_V198/106.jpg",
+      "pts_time": 185.68,
+      "fps": 25.0,
+      "n_keyframes": 166,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp giữa áo vàng, tạp dề đỏ và túi giấy trắng có logo là những chi tiết nhận dạng rất đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_012",
+      "type": "KIS",
+      "query": "Tìm video một nam đầu bếp mặc áo trắng đang chuẩn bị rau trên bàn bếp cạnh bếp gas, bên phải là người phụ nữ mặc tạp dề trắng và áo họa tiết đang đứng quan sát.",
+      "source": "gemma",
+      "gt_video": "L26_V088",
+      "gt_frame": 2827,
+      "gt_ranges": {
+        "tol5": [
+          2822,
+          2832
+        ],
+        "tol30": [
+          2797,
+          2857
+        ],
+        "tol90": [
+          2737,
+          2917
+        ],
+        "kf_span": [
+          2821,
+          2861
+        ]
+      },
+      "keyframe_n": 56,
+      "keyframe_file": "data/keyframes/L26_V088/056.jpg",
+      "pts_time": 113.08,
+      "fps": 25.0,
+      "n_keyframes": 155,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Mô tả chi tiết trang phục, hành động và vị trí của hai nhân vật trong bối cảnh bếp.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_013",
+      "type": "KIS",
+      "query": "Tìm video cận cảnh một chiếc túi xách có họa tiết chữ lồng màu xám, trang trí bằng phần viền da trắng và khóa kim loại màu vàng hình móng ngựa.",
+      "source": "gemma",
+      "gt_video": "L30_V024",
+      "gt_frame": 1589,
+      "gt_ranges": {
+        "tol5": [
+          1584,
+          1594
+        ],
+        "tol30": [
+          1559,
+          1619
+        ],
+        "tol90": [
+          1499,
+          1679
+        ],
+        "kf_span": [
+          1588,
+          1605
+        ]
+      },
+      "keyframe_n": 39,
+      "keyframe_file": "data/keyframes/L30_V024/039.jpg",
+      "pts_time": 63.56,
+      "fps": 25.0,
+      "n_keyframes": 71,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Mô tả rất chi tiết các đặc điểm nhận dạng đặc thù về họa tiết, màu sắc và hình dáng phụ kiện.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_014",
+      "type": "KIS",
+      "query": "Tìm video một người phụ nữ mặc áo vàng, tạp dề trắng quai đỏ đang nói chuyện với người đàn ông mặc áo trắng viền đỏ trong bối cảnh nhà bếp có cây xanh.",
+      "source": "gemma",
+      "gt_video": "L26_V047",
+      "gt_frame": 6615,
+      "gt_ranges": {
+        "tol5": [
+          6610,
+          6620
+        ],
+        "tol30": [
+          6585,
+          6645
+        ],
+        "tol90": [
+          6525,
+          6705
+        ],
+        "kf_span": [
+          6582,
+          6640
+        ]
+      },
+      "keyframe_n": 117,
+      "keyframe_file": "data/keyframes/L26_V047/117.jpg",
+      "pts_time": 264.6,
+      "fps": 25.0,
+      "n_keyframes": 138,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp màu sắc trang phục đặc thù của cả hai người cùng với bối cảnh bếp có cây xanh giúp phân biệt rõ.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_015",
+      "type": "KIS",
+      "query": "Tìm video bài giảng có câu hỏi trắc nghiệm trên nền màu cam, các lựa chọn đáp án A, B, C, D và phần lời giải chứa công thức toán học trên nền xanh nhạt.",
+      "source": "gemma",
+      "gt_video": "L25_V005",
+      "gt_frame": 45899,
+      "gt_ranges": {
+        "tol5": [
+          45894,
+          45904
+        ],
+        "tol30": [
+          45869,
+          45929
+        ],
+        "tol90": [
+          45809,
+          45989
+        ],
+        "kf_span": [
+          45824,
+          45974
+        ]
+      },
+      "keyframe_n": 393,
+      "keyframe_file": "data/keyframes/L25_V005/393.jpg",
+      "pts_time": 1531.53,
+      "fps": 29.97,
+      "n_keyframes": 543,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Mô tả đúng bố cục màu sắc và cấu trúc nội dung giáo dục.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_016",
+      "type": "KIS",
+      "query": "Tìm video một người phụ nữ tóc đen mặc áo sơ mi vàng họa tiết đang đứng cử chỉ tay tại khuôn viên ngoài trời có cây cọ, cầu thang và biển báo màu xanh.",
+      "source": "gemma",
+      "gt_video": "L27_V005",
+      "gt_frame": 2835,
+      "gt_ranges": {
+        "tol5": [
+          2830,
+          2840
+        ],
+        "tol30": [
+          2805,
+          2865
+        ],
+        "tol90": [
+          2745,
+          2925
+        ],
+        "kf_span": [
+          2767,
+          2849
+        ]
+      },
+      "keyframe_n": 103,
+      "keyframe_file": "data/keyframes/L27_V005/103.jpg",
+      "pts_time": 113.4,
+      "fps": 25.0,
+      "n_keyframes": 336,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp giữa áo vàng họa tiết và các vật thể như cây cọ, biển báo xanh giúp phân biệt tốt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_017",
+      "type": "KIS",
+      "query": "Tìm video một người đàn ông đeo kính mặc áo sơ mi trắng đang ngồi trước laptop, bên phải là sơ đồ tư duy có các hình tròn màu cam, xanh dương, xám và vàng.",
+      "source": "gemma",
+      "gt_video": "L25_V028",
+      "gt_frame": 15900,
+      "gt_ranges": {
+        "tol5": [
+          15895,
+          15905
+        ],
+        "tol30": [
+          15870,
+          15930
+        ],
+        "tol90": [
+          15810,
+          15990
+        ],
+        "kf_span": [
+          15825,
+          15975
+        ]
+      },
+      "keyframe_n": 201,
+      "keyframe_file": "data/keyframes/L25_V028/201.jpg",
+      "pts_time": 636.0,
+      "fps": 25.0,
+      "n_keyframes": 305,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Chi tiết về màu sắc của các hình tròn trong sơ đồ giúp nhận diện chính xác cảnh này.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_018",
+      "type": "KIS",
+      "query": "Tìm video một nhóm thanh niên mặc áo phông vàng đang cùng nhau khiêng một người xuống cầu thang có tay vịn kim loại, phía sau có một tấm áp phích lớn trên tường.",
+      "source": "gemma",
+      "gt_video": "L30_V058",
+      "gt_frame": 1388,
+      "gt_ranges": {
+        "tol5": [
+          1383,
+          1393
+        ],
+        "tol30": [
+          1358,
+          1418
+        ],
+        "tol90": [
+          1298,
+          1478
+        ],
+        "kf_span": [
+          1386,
+          1439
+        ]
+      },
+      "keyframe_n": 43,
+      "keyframe_file": "data/keyframes/L30_V058/043.jpg",
+      "pts_time": 55.52,
+      "fps": 25.0,
+      "n_keyframes": 69,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chi tiết về màu áo vàng và bối cảnh cầu thang giúp phân biệt tốt với các cảnh tương tự.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_019",
+      "type": "KIS",
+      "query": "Tìm video một nữ phát thanh viên mặc váy xanh đen đang nói, bên cạnh là cảnh một nhóm người đang đua xe đạp trên con đường giữa rừng cây có nhà mái đỏ.",
+      "source": "gemma",
+      "gt_video": "L21_V017",
+      "gt_frame": 20760,
+      "gt_ranges": {
+        "tol5": [
+          20755,
+          20765
+        ],
+        "tol30": [
+          20730,
+          20790
+        ],
+        "tol90": [
+          20670,
+          20850
+        ],
+        "kf_span": [
+          20704,
+          20843
+        ]
+      },
+      "keyframe_n": 204,
+      "keyframe_file": "data/keyframes/L21_V017/204.jpg",
+      "pts_time": 830.4,
+      "fps": 25.0,
+      "n_keyframes": 230,
+      "video_path": "data/video/Videos_L21_a/L21_V017.mp4",
+      "distinct": 5,
+      "distinct_note": "Sự kết hợp giữa đặc điểm trang phục người dẫn và nội dung cảnh quay phụ rất đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_020",
+      "type": "KIS",
+      "query": "Tìm video về đầu bếp mặc áo trắng viền đỏ đang khua tay diễn tả, đứng cạnh người đàn ông mặc áo sơ mi kẻ đỏ đeo tạp dề trắng trong căn bếp có nhiều thực phẩm.",
+      "source": "gemma",
+      "gt_video": "L26_V165",
+      "gt_frame": 1760,
+      "gt_ranges": {
+        "tol5": [
+          1755,
+          1765
+        ],
+        "tol30": [
+          1730,
+          1790
+        ],
+        "tol90": [
+          1670,
+          1850
+        ],
+        "kf_span": [
+          1730,
+          1776
+        ]
+      },
+      "keyframe_n": 37,
+      "keyframe_file": "data/keyframes/L26_V165/037.jpg",
+      "pts_time": 70.4,
+      "fps": 25.0,
+      "n_keyframes": 140,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp giữa áo đầu bếp viền đỏ và người đàn ông mặc sơ mi kẻ đỏ đeo tạp dề là chi tiết rất riêng biệt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_021",
+      "type": "KIS",
+      "query": "Tìm video quay cảnh các nguyên liệu nấu món cá kho gồm miếng cá trên đĩa xanh, thịt ba chỉ, củ riềng, ớt đỏ, hành tím, hành lá và gói gia vị màu xanh trên mặt bàn gỗ.",
+      "source": "gemma",
+      "gt_video": "L26_V176",
+      "gt_frame": 768,
+      "gt_ranges": {
+        "tol5": [
+          763,
+          773
+        ],
+        "tol30": [
+          738,
+          798
+        ],
+        "tol90": [
+          678,
+          858
+        ],
+        "kf_span": [
+          704,
+          775
+        ]
+      },
+      "keyframe_n": 19,
+      "keyframe_file": "data/keyframes/L26_V176/019.jpg",
+      "pts_time": 30.72,
+      "fps": 25.0,
+      "n_keyframes": 151,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Sự kết hợp của nhiều nguyên liệu cụ thể cùng gói gia vị và đĩa đựng tạo nên một cảnh quay rất đặc thù.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_022",
+      "type": "KIS",
+      "query": "Tìm video quay cảnh chiếc đĩa màu xanh ngọc có viền lượn sóng trang trí rau xanh và hoa nhỏ, đặt trên khăn xanh và khay gỗ cạnh bát nước chấm đỏ và đĩa xoài vàng.",
+      "source": "gemma",
+      "gt_video": "L26_V006",
+      "gt_frame": 5094,
+      "gt_ranges": {
+        "tol5": [
+          5089,
+          5099
+        ],
+        "tol30": [
+          5064,
+          5124
+        ],
+        "tol90": [
+          5004,
+          5184
+        ],
+        "kf_span": [
+          5069,
+          5112
+        ]
+      },
+      "keyframe_n": 93,
+      "keyframe_file": "data/keyframes/L26_V006/093.jpg",
+      "pts_time": 203.76,
+      "fps": 25.0,
+      "n_keyframes": 120,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Sự kết hợp giữa đĩa xanh ngọc viền lượn sóng, hoa trang trí, khăn xanh, nước chấm đỏ và xoài vàng là cực kỳ đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_023",
+      "type": "KIS",
+      "query": "Tìm video một người mặc áo đầu bếp màu trắng có viền đỏ đang dùng dụng cụ màu cam trộn hỗn hợp bọt trắng vào một bát thủy tinh chứa chất lỏng màu vàng trên mặt bàn trắng.",
+      "source": "gemma",
+      "gt_video": "L26_V067",
+      "gt_frame": 3840,
+      "gt_ranges": {
+        "tol5": [
+          3835,
+          3845
+        ],
+        "tol30": [
+          3810,
+          3870
+        ],
+        "tol90": [
+          3750,
+          3930
+        ],
+        "kf_span": [
+          3815,
+          3854
+        ]
+      },
+      "keyframe_n": 72,
+      "keyframe_file": "data/keyframes/L26_V067/072.jpg",
+      "pts_time": 153.6,
+      "fps": 25.0,
+      "n_keyframes": 143,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Sự kết hợp giữa áo viền đỏ, dụng cụ màu cam và hành động trộn cụ thể tạo độ phân biệt rất cao.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_024",
+      "type": "KIS",
+      "query": "Tìm video quay cận cảnh đôi bàn tay nhăn nheo của một người cao tuổi đang cầm và lật những tờ tiền mệnh giá 5000 đồng.",
+      "source": "gemma",
+      "gt_video": "L30_V020",
+      "gt_frame": 1074,
+      "gt_ranges": {
+        "tol5": [
+          1069,
+          1079
+        ],
+        "tol30": [
+          1044,
+          1104
+        ],
+        "tol90": [
+          984,
+          1164
+        ],
+        "kf_span": [
+          1036,
+          1110
+        ]
+      },
+      "keyframe_n": 13,
+      "keyframe_file": "data/keyframes/L30_V020/013.jpg",
+      "pts_time": 42.96,
+      "fps": 25.0,
+      "n_keyframes": 44,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chi tiết bàn tay người già và mệnh giá tiền cụ thể giúp phân biệt tốt với các cảnh đếm tiền thông thường.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_025",
+      "type": "KIS",
+      "query": "Tìm video về một đầu bếp mặc áo trắng viền đỏ đang đứng nấu ăn bằng chảo, bên cạnh là người đàn ông mặc tạp dề trắng, phía sau là kệ gỗ trưng bày bát đĩa và đồ gia dụng.",
+      "source": "gemma",
+      "gt_video": "L26_V030",
+      "gt_frame": 3915,
+      "gt_ranges": {
+        "tol5": [
+          3910,
+          3920
+        ],
+        "tol30": [
+          3885,
+          3945
+        ],
+        "tol90": [
+          3825,
+          4005
+        ],
+        "kf_span": [
+          3893,
+          3937
+        ]
+      },
+      "keyframe_n": 79,
+      "keyframe_file": "data/keyframes/L26_V030/079.jpg",
+      "pts_time": 156.6,
+      "fps": 25.0,
+      "n_keyframes": 120,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chi tiết áo đầu bếp viền đỏ, tạp dề trắng và bối cảnh kệ gỗ trưng bày đồ bếp tạo độ phân biệt cao.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_026",
+      "type": "KIS",
+      "query": "Tìm một người nam tóc nâu đỏ, mặc áo sơ mi xanh lá họa tiết và tạp dề trắng dây đỏ đang nói trong căn bếp có tường gạch trắng và cây xanh.",
+      "source": "gemma",
+      "gt_video": "L26_V109",
+      "gt_frame": 4480,
+      "gt_ranges": {
+        "tol5": [
+          4475,
+          4485
+        ],
+        "tol30": [
+          4450,
+          4510
+        ],
+        "tol90": [
+          4390,
+          4570
+        ],
+        "kf_span": [
+          4460,
+          4482
+        ]
+      },
+      "keyframe_n": 115,
+      "keyframe_file": "data/keyframes/L26_V109/115.jpg",
+      "pts_time": 179.2,
+      "fps": 25.0,
+      "n_keyframes": 178,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sự kết hợp giữa áo sơ mi họa tiết nhiệt đới và tạp dề trắng dây đỏ trong bối cảnh bếp là chi tiết rất đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_027",
+      "type": "KIS",
+      "query": "Tìm cảnh một đầu bếp nam mặc áo bếp trắng viền đỏ đang trút tô thuỷ tinh đựng sợi màu vàng, bên phải là nữ dẫn chương trình mặc áo đỏ đeo tạp dề trắng đứng khoanh tay.",
+      "source": "vlm",
+      "gt_video": "L26_V078",
+      "gt_frame": 2604,
+      "gt_ranges": {
+        "tol5": [
+          2599,
+          2609
+        ],
+        "tol30": [
+          2574,
+          2634
+        ],
+        "tol90": [
+          2514,
+          2694
+        ],
+        "kf_span": [
+          2587,
+          2624
+        ]
+      },
+      "keyframe_n": 53,
+      "keyframe_file": "data/keyframes/L26_V078/053.jpg",
+      "pts_time": 104.16,
+      "fps": 25.0,
+      "n_keyframes": 152,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Trường quay nấu ăn này lặp lại ở rất nhiều tập; chỉ phân biệt được nhờ hành động trút tô và áo đỏ của người dẫn.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_028",
+      "type": "KIS",
+      "query": "Tìm video màn biểu diễn múa lân có đầu lân màu trắng hồng nhảy cao trên các cột trụ được đánh số, phía sau là sân khấu có hình rồng vàng.",
+      "source": "gemma",
+      "gt_video": "L24_V036",
+      "gt_frame": 4104,
+      "gt_ranges": {
+        "tol5": [
+          4099,
+          4109
+        ],
+        "tol30": [
+          4074,
+          4134
+        ],
+        "tol90": [
+          4014,
+          4194
+        ],
+        "kf_span": [
+          4045,
+          4180
+        ]
+      },
+      "keyframe_n": 38,
+      "keyframe_file": "data/keyframes/L24_V036/038.jpg",
+      "pts_time": 136.8,
+      "fps": 30.0,
+      "n_keyframes": 83,
+      "video_path": "data/video/Videos_L24_a/L24_V036.mp4",
+      "distinct": 5,
+      "distinct_note": "Các chi tiết về màu sắc đầu lân, cột trụ có đánh số và hình rồng vàng rất đặc trưng để phân biệt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_029",
+      "type": "KIS",
+      "query": "Tìm video cảnh một nam đầu bếp mặc áo trắng viền đỏ và người phụ nữ mặc áo đen tạp dề trắng đứng sau quầy bếp có đặt nồi trên bếp và các kệ gỗ đựng thực phẩm.",
+      "source": "gemma",
+      "gt_video": "L26_V002",
+      "gt_frame": 4834,
+      "gt_ranges": {
+        "tol5": [
+          4829,
+          4839
+        ],
+        "tol30": [
+          4804,
+          4864
+        ],
+        "tol90": [
+          4744,
+          4924
+        ],
+        "kf_span": [
+          4799,
+          4847
+        ]
+      },
+      "keyframe_n": 86,
+      "keyframe_file": "data/keyframes/L26_V002/086.jpg",
+      "pts_time": 193.36,
+      "fps": 25.0,
+      "n_keyframes": 122,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chi tiết về sự phối màu trang phục và bối cảnh kệ gỗ đặc thù giúp phân biệt tốt với các cảnh bếp khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_030",
+      "type": "KIS",
+      "query": "Tìm video một người đàn ông mặc áo trắng có viền đỏ ở cổ và đường kẻ dọc màu đỏ trước ngực, đứng trước nền tường gỗ và có biển hiệu màu đỏ ở bên phải.",
+      "source": "gemma",
+      "gt_video": "L26_V143",
+      "gt_frame": 1536,
+      "gt_ranges": {
+        "tol5": [
+          1531,
+          1541
+        ],
+        "tol30": [
+          1506,
+          1566
+        ],
+        "tol90": [
+          1446,
+          1626
+        ],
+        "kf_span": [
+          1472,
+          1600
+        ]
+      },
+      "keyframe_n": 32,
+      "keyframe_file": "data/keyframes/L26_V143/032.jpg",
+      "pts_time": 61.44,
+      "fps": 25.0,
+      "n_keyframes": 158,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Các chi tiết đặc trưng về trang phục và biển hiệu màu đỏ giúp phân biệt tốt với các cảnh nói chuyện khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_031",
+      "type": "KIS",
+      "query": "Tìm cảnh cận ba miếng thịt ba chỉ sống xếp trên đĩa trắng cùng bó rau cần, xung quanh là chén kỷ tử đỏ, chén hạt nâu băm, đĩa nấm kim châm khô và mấy quả táo đỏ.",
+      "source": "vlm",
+      "gt_video": "L26_V094",
+      "gt_frame": 640,
+      "gt_ranges": {
+        "tol5": [
+          635,
+          645
+        ],
+        "tol30": [
+          610,
+          670
+        ],
+        "tol90": [
+          550,
+          730
+        ],
+        "kf_span": [
+          576,
+          641
+        ]
+      },
+      "keyframe_n": 17,
+      "keyframe_file": "data/keyframes/L26_V094/017.jpg",
+      "pts_time": 25.6,
+      "fps": 25.0,
+      "n_keyframes": 144,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Tổ hợp nguyên liệu thuốc bắc rất riêng, khó trùng cảnh khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_032",
+      "type": "KIS",
+      "query": "Tìm cảnh sân phơi cá khô trải kín mặt đất bằng những vỉ tre hình chữ nhật, nhiều người đội nón đi xe máy chở vỉ len giữa các lối đi dưới nắng gắt.",
+      "source": "vlm",
+      "gt_video": "L29_V011",
+      "gt_frame": 1345,
+      "gt_ranges": {
+        "tol5": [
+          1340,
+          1350
+        ],
+        "tol30": [
+          1315,
+          1375
+        ],
+        "tol90": [
+          1255,
+          1435
+        ],
+        "kf_span": [
+          1343,
+          1345
+        ]
+      },
+      "keyframe_n": 122,
+      "keyframe_file": "data/keyframes/L29_V011/122.jpg",
+      "pts_time": 53.8,
+      "fps": 25.0,
+      "n_keyframes": 428,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Quy mô sân phơi và việc chạy xe máy giữa các vỉ là chi tiết hiếm.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_033",
+      "type": "KIS",
+      "query": "Tìm cảnh màn hình bài giảng nền xanh đậm có dải tiêu đề màu xanh lá hình dải băng, bên dưới là khung chữ viền vàng và ba ô công thức hoá học chữ xanh trên nền vàng nhạt.",
+      "source": "vlm",
+      "gt_video": "L25_V074",
+      "gt_frame": 17777,
+      "gt_ranges": {
+        "tol5": [
+          17772,
+          17782
+        ],
+        "tol30": [
+          17747,
+          17807
+        ],
+        "tol90": [
+          17687,
+          17867
+        ],
+        "kf_span": [
+          17702,
+          17852
+        ]
+      },
+      "keyframe_n": 168,
+      "keyframe_file": "data/keyframes/L25_V074/168.jpg",
+      "pts_time": 593.193,
+      "fps": 29.97,
+      "n_keyframes": 535,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Mô tả bố cục slide chứ không chép chữ; bố cục dải băng + ba ô vàng khá riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_034",
+      "type": "KIS",
+      "query": "Tìm cảnh sạp quần áo cũ với hai dãy sào sắt treo dày đặc móc áo, một phụ nữ tóc búi nâu đỏ mặc áo khoác đen đeo khẩu trang đang cúi lựa đồ, phía xa có ô dù xanh.",
+      "source": "vlm",
+      "gt_video": "L30_V077",
+      "gt_frame": 1488,
+      "gt_ranges": {
+        "tol5": [
+          1483,
+          1493
+        ],
+        "tol30": [
+          1458,
+          1518
+        ],
+        "tol90": [
+          1398,
+          1578
+        ],
+        "kf_span": [
+          1460,
+          1512
+        ]
+      },
+      "keyframe_n": 23,
+      "keyframe_file": "data/keyframes/L30_V077/023.jpg",
+      "pts_time": 59.52,
+      "fps": 25.0,
+      "n_keyframes": 67,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Mật độ móc áo và tóc búi nâu đỏ giúp phân biệt với cảnh chợ thường.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_035",
+      "type": "KIS",
+      "query": "Tìm cảnh ngược sáng dưới mái tôn, bóng đen một người đang giơ hai tay nâng tấm vỉ lớn lên khỏi đầu, phía ngoài nắng là sân phơi bánh tráng trắng và hàng dừa.",
+      "source": "vlm",
+      "gt_video": "L28_V003",
+      "gt_frame": 16974,
+      "gt_ranges": {
+        "tol5": [
+          16969,
+          16979
+        ],
+        "tol30": [
+          16944,
+          17004
+        ],
+        "tol90": [
+          16884,
+          17064
+        ],
+        "kf_span": [
+          16924,
+          16992
+        ]
+      },
+      "keyframe_n": 288,
+      "keyframe_file": "data/keyframes/L28_V003/288.jpg",
+      "pts_time": 678.96,
+      "fps": 25.0,
+      "n_keyframes": 475,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Bố cục ngược sáng tạo bóng đen gần như toàn khung là chi tiết hiếm.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_036",
+      "type": "KIS",
+      "query": "Tìm cảnh sáu nữ sinh mặc đồng phục đỏ đô ngồi quây tròn trên bãi cỏ dưới tán cây, phía trước ống kính là những lá sen xanh lớn và vài bông sen trắng.",
+      "source": "vlm",
+      "gt_video": "L25_V055",
+      "gt_frame": 13059,
+      "gt_ranges": {
+        "tol5": [
+          13054,
+          13064
+        ],
+        "tol30": [
+          13029,
+          13089
+        ],
+        "tol90": [
+          12969,
+          13149
+        ],
+        "kf_span": [
+          13054,
+          13083
+        ]
+      },
+      "keyframe_n": 158,
+      "keyframe_file": "data/keyframes/L25_V055/158.jpg",
+      "pts_time": 522.36,
+      "fps": 25.0,
+      "n_keyframes": 339,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Lá sen tiền cảnh che một phần khung hình là chi tiết bố cục riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_037",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một mầm cây non thân mảnh với vài lá xanh nhọn mọc lên giữa thảm lá khô nâu và cành mục trên nền đất rừng.",
+      "source": "vlm",
+      "gt_video": "L29_V022",
+      "gt_frame": 1620,
+      "gt_ranges": {
+        "tol5": [
+          1615,
+          1625
+        ],
+        "tol30": [
+          1590,
+          1650
+        ],
+        "tol90": [
+          1530,
+          1710
+        ],
+        "kf_span": [
+          1612,
+          1636
+        ]
+      },
+      "keyframe_n": 71,
+      "keyframe_file": "data/keyframes/L29_V022/071.jpg",
+      "pts_time": 64.8,
+      "fps": 25.0,
+      "n_keyframes": 432,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Cảnh thiên nhiên cận cảnh, có thể trùng vài phóng sự trồng rừng khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_038",
+      "type": "KIS",
+      "query": "Tìm cảnh một đầu bếp nam áo trắng viền đỏ đứng chắp tay bên trái và một nữ dẫn chương trình áo đen đeo tạp dề trắng đứng bên phải, giữa hai người là chiếc chảo đỏ đặt trên bếp gas.",
+      "source": "vlm",
+      "gt_video": "L26_V142",
+      "gt_frame": 4224,
+      "gt_ranges": {
+        "tol5": [
+          4219,
+          4229
+        ],
+        "tol30": [
+          4194,
+          4254
+        ],
+        "tol90": [
+          4134,
+          4314
+        ],
+        "kf_span": [
+          4186,
+          4244
+        ]
+      },
+      "keyframe_n": 86,
+      "keyframe_file": "data/keyframes/L26_V142/086.jpg",
+      "pts_time": 168.96,
+      "fps": 25.0,
+      "n_keyframes": 156,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Cùng trường quay với nhiều tập khác; chảo đỏ và áo đen của người dẫn là điểm phân biệt yếu.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_039",
+      "type": "KIS",
+      "query": "Tìm cảnh nhìn xuyên qua một cổng chào vòm lớn sơn màu hồng sẫm có hai trụ khắc chữ dọc, bên trong là con đường đông xe máy và ô tô giữa trưa nắng.",
+      "source": "vlm",
+      "gt_video": "L28_V020",
+      "gt_frame": 4860,
+      "gt_ranges": {
+        "tol5": [
+          4855,
+          4865
+        ],
+        "tol30": [
+          4830,
+          4890
+        ],
+        "tol90": [
+          4770,
+          4950
+        ],
+        "kf_span": [
+          4815,
+          4927
+        ]
+      },
+      "keyframe_n": 115,
+      "keyframe_file": "data/keyframes/L28_V020/115.jpg",
+      "pts_time": 194.4,
+      "fps": 25.0,
+      "n_keyframes": 401,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Cổng vòm hồng sẫm ôm trọn khung hình là kiến trúc rất dễ nhận.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_040",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một bếp gas mặt kính đen chưa bật lửa, chỉ thấy vòng chia lửa bằng gang và kiềng sắt, phía trên là mặt bàn bếp trắng trống trơn.",
+      "source": "vlm",
+      "gt_video": "L26_V074",
+      "gt_frame": 3972,
+      "gt_ranges": {
+        "tol5": [
+          3967,
+          3977
+        ],
+        "tol30": [
+          3942,
+          4002
+        ],
+        "tol90": [
+          3882,
+          4062
+        ],
+        "kf_span": [
+          3970,
+          4004
+        ]
+      },
+      "keyframe_n": 83,
+      "keyframe_file": "data/keyframes/L26_V074/083.jpg",
+      "pts_time": 158.88,
+      "fps": 25.0,
+      "n_keyframes": 155,
+      "video_path": null,
+      "distinct": 2,
+      "distinct_note": "Cận cảnh bếp trống, gần như tập nấu ăn nào cũng có — chung chung, cần rà tay.",
+      "needs_review": true
+    },
+    {
+      "query_id": "kis_041",
+      "type": "KIS",
+      "query": "Tìm cảnh quay từ trên cao xuống mặt biển xanh thẫm, hai con cá voi bơi song song để lại vệt bọt trắng loang phía bên trái khung hình.",
+      "source": "vlm",
+      "gt_video": "L21_V014",
+      "gt_frame": 30477,
+      "gt_ranges": {
+        "tol5": [
+          30472,
+          30482
+        ],
+        "tol30": [
+          30447,
+          30507
+        ],
+        "tol90": [
+          30387,
+          30567
+        ],
+        "kf_span": [
+          30456,
+          30567
+        ]
+      },
+      "keyframe_n": 258,
+      "keyframe_file": "data/keyframes/L21_V014/258.jpg",
+      "pts_time": 1015.93,
+      "fps": 30.0,
+      "n_keyframes": 288,
+      "video_path": "data/video/Videos_L21_a/L21_V014.mp4",
+      "distinct": 5,
+      "distinct_note": "Cảnh cá voi quay flycam rất hiếm trong kho bản tin.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_042",
+      "type": "KIS",
+      "query": "Tìm cảnh biểu diễn múa lân, con lân vàng có mặt trang trí hồng đứng thăng bằng trên đỉnh cột mai hoa thung giữa giàn giáo sắt, khán giả ngồi xem hai bên dưới hàng dừa.",
+      "source": "vlm",
+      "gt_video": "L24_V009",
+      "gt_frame": 7812,
+      "gt_ranges": {
+        "tol5": [
+          7807,
+          7817
+        ],
+        "tol30": [
+          7782,
+          7842
+        ],
+        "tol90": [
+          7722,
+          7902
+        ],
+        "kf_span": [
+          7802,
+          7874
+        ]
+      },
+      "keyframe_n": 94,
+      "keyframe_file": "data/keyframes/L24_V009/094.jpg",
+      "pts_time": 312.48,
+      "fps": 25.0,
+      "n_keyframes": 158,
+      "video_path": "data/video/Videos_L24_a/L24_V009.mp4",
+      "distinct": 5,
+      "distinct_note": "Lân vàng trên mai hoa thung là cảnh rất đặc trưng, dễ tách.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_043",
+      "type": "KIS",
+      "query": "Tìm cảnh một phụ nữ tóc ngắn mặc áo cử nhân đen viền đỏ đang đưa tay chỉ lên phía trước, phía sau là tấm biển đỏ chữ trắng cỡ lớn và huy hiệu tròn của một trường đại học.",
+      "source": "vlm",
+      "gt_video": "L25_V013",
+      "gt_frame": 29849,
+      "gt_ranges": {
+        "tol5": [
+          29844,
+          29854
+        ],
+        "tol30": [
+          29819,
+          29879
+        ],
+        "tol90": [
+          29759,
+          29939
+        ],
+        "kf_span": [
+          29774,
+          29924
+        ]
+      },
+      "keyframe_n": 338,
+      "keyframe_file": "data/keyframes/L25_V013/338.jpg",
+      "pts_time": 995.995,
+      "fps": 29.97,
+      "n_keyframes": 397,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chỉ mô tả biển đỏ chữ trắng, không chép chữ; động tác đưa tay là điểm phân biệt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_044",
+      "type": "KIS",
+      "query": "Tìm cảnh bài giảng tiếng Anh có hình nền lớp học hoạt hình với bảng xanh lá, bốn ô đáp án trắc nghiệm màu kem, cô giáo mặc áo dài hồng ngồi bên phải cạnh máy tính xách tay.",
+      "source": "vlm",
+      "gt_video": "L25_V086",
+      "gt_frame": 40200,
+      "gt_ranges": {
+        "tol5": [
+          40195,
+          40205
+        ],
+        "tol30": [
+          40170,
+          40230
+        ],
+        "tol90": [
+          40110,
+          40290
+        ],
+        "kf_span": [
+          40125,
+          40275
+        ]
+      },
+      "keyframe_n": 367,
+      "keyframe_file": "data/keyframes/L25_V086/367.jpg",
+      "pts_time": 1608.0,
+      "fps": 25.0,
+      "n_keyframes": 529,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Áo dài hồng + nền lớp học hoạt hình là tổ hợp khá riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_045",
+      "type": "KIS",
+      "query": "Tìm cảnh cận những khoanh khổ qua xanh nhồi thịt băm trộn cà rốt sợi và nấm mèo, xếp kín một đĩa trắng đặt trên bếp.",
+      "source": "vlm",
+      "gt_video": "L26_V180",
+      "gt_frame": 3456,
+      "gt_ranges": {
+        "tol5": [
+          3451,
+          3461
+        ],
+        "tol30": [
+          3426,
+          3486
+        ],
+        "tol90": [
+          3366,
+          3546
+        ],
+        "kf_span": [
+          3433,
+          3460
+        ]
+      },
+      "keyframe_n": 83,
+      "keyframe_file": "data/keyframes/L26_V180/083.jpg",
+      "pts_time": 138.24,
+      "fps": 25.0,
+      "n_keyframes": 174,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Món khổ qua nhồi thịt cắt khoanh, cận cảnh, màu xanh rất nổi.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_046",
+      "type": "KIS",
+      "query": "Tìm cảnh một phụ nữ lớn tuổi tóc ngắn đeo kính gọng đỏ, mặc áo khoác tím than, ngồi cầm mấy cuốn sách cũ và đưa tay giới thiệu tập sách dựng bên phải, sau lưng là cửa sắt xanh và bình lọc nước.",
+      "source": "vlm",
+      "gt_video": "L30_V027",
+      "gt_frame": 6993,
+      "gt_ranges": {
+        "tol5": [
+          6988,
+          6998
+        ],
+        "tol30": [
+          6963,
+          7023
+        ],
+        "tol90": [
+          6903,
+          7083
+        ],
+        "kf_span": [
+          6920,
+          7065
+        ]
+      },
+      "keyframe_n": 65,
+      "keyframe_file": "data/keyframes/L30_V027/065.jpg",
+      "pts_time": 279.72,
+      "fps": 25.0,
+      "n_keyframes": 81,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Kính gọng đỏ, áo tím than, bối cảnh nhà chật đầy sách — rất riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_047",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một bàn tay cầm cán chiếc chảo chống dính màu nâu sẫm nghiêng nhẹ trên bếp gas đang cháy, người cầm mặc áo bếp trắng.",
+      "source": "vlm",
+      "gt_video": "L26_V087",
+      "gt_frame": 2688,
+      "gt_ranges": {
+        "tol5": [
+          2683,
+          2693
+        ],
+        "tol30": [
+          2658,
+          2718
+        ],
+        "tol90": [
+          2598,
+          2778
+        ],
+        "kf_span": [
+          2674,
+          2705
+        ]
+      },
+      "keyframe_n": 53,
+      "keyframe_file": "data/keyframes/L26_V087/053.jpg",
+      "pts_time": 107.52,
+      "fps": 25.0,
+      "n_keyframes": 145,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Hành động nghiêng chảo cụ thể nhưng bối cảnh bếp lặp nhiều tập.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_048",
+      "type": "KIS",
+      "query": "Tìm cảnh màn hình giải bài tập vật lí về con lắc lò xo, nền xanh nhạt, bốn ô đáp án viền vàng nằm ngang phía trên và đồ thị hình sin màu xanh dương có hai mũi tên đỏ chỉ xuống.",
+      "source": "vlm",
+      "gt_video": "L25_V085",
+      "gt_frame": 44638,
+      "gt_ranges": {
+        "tol5": [
+          44633,
+          44643
+        ],
+        "tol30": [
+          44608,
+          44668
+        ],
+        "tol90": [
+          44548,
+          44728
+        ],
+        "kf_span": [
+          44563,
+          44713
+        ]
+      },
+      "keyframe_n": 381,
+      "keyframe_file": "data/keyframes/L25_V085/381.jpg",
+      "pts_time": 1489.45,
+      "fps": 29.97,
+      "n_keyframes": 599,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Đồ thị sin kèm hai mũi tên đỏ là bố cục riêng của slide này.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_049",
+      "type": "KIS",
+      "query": "Tìm cảnh màn hình bài tập hoá học về ăn mòn điện hoá, nền trắng với dải tiêu đề xanh lá, bảy dòng đề đánh số và các dòng chữ đỏ viết chèn bên phải, góc dưới có ngôi sao vàng.",
+      "source": "vlm",
+      "gt_video": "L25_V084",
+      "gt_frame": 40775,
+      "gt_ranges": {
+        "tol5": [
+          40770,
+          40780
+        ],
+        "tol30": [
+          40745,
+          40805
+        ],
+        "tol90": [
+          40685,
+          40865
+        ],
+        "kf_span": [
+          40699,
+          40849
+        ]
+      },
+      "keyframe_n": 365,
+      "keyframe_file": "data/keyframes/L25_V084/365.jpg",
+      "pts_time": 1360.53,
+      "fps": 29.97,
+      "n_keyframes": 599,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chữ đỏ chèn tay bên phải và ngôi sao vàng là dấu hiệu nhận biết.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_050",
+      "type": "KIS",
+      "query": "Tìm cảnh bài giảng địa lí có thầy giáo áo sơ mi trắng thắt cà vạt xanh ngồi bên trái, bên phải là ảnh chụp hai trang atlat bản đồ Việt Nam với nhiều vòng tròn khoanh đỏ.",
+      "source": "vlm",
+      "gt_video": "L25_V051",
+      "gt_frame": 13050,
+      "gt_ranges": {
+        "tol5": [
+          13045,
+          13055
+        ],
+        "tol30": [
+          13020,
+          13080
+        ],
+        "tol90": [
+          12960,
+          13140
+        ],
+        "kf_span": [
+          12975,
+          13125
+        ]
+      },
+      "keyframe_n": 157,
+      "keyframe_file": "data/keyframes/L25_V051/157.jpg",
+      "pts_time": 522.0,
+      "fps": 25.0,
+      "n_keyframes": 505,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Hai trang atlat mở kèm khoanh đỏ là hình ảnh riêng của bài này.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_051",
+      "type": "KIS",
+      "query": "Tìm cảnh một người đàn ông đầu cạo trọc mặc áo thun xanh than đang trả lời phỏng vấn, xung quanh chất kín xe đạp cũ với giỏ nhựa và giỏ sắt.",
+      "source": "vlm",
+      "gt_video": "L30_V001",
+      "gt_frame": 992,
+      "gt_ranges": {
+        "tol5": [
+          987,
+          997
+        ],
+        "tol30": [
+          962,
+          1022
+        ],
+        "tol90": [
+          902,
+          1082
+        ],
+        "kf_span": [
+          955,
+          1029
+        ]
+      },
+      "keyframe_n": 16,
+      "keyframe_file": "data/keyframes/L30_V001/016.jpg",
+      "pts_time": 39.68,
+      "fps": 25.0,
+      "n_keyframes": 72,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Nền toàn xe đạp cũ chồng chất là bối cảnh hiếm.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_052",
+      "type": "KIS",
+      "query": "Tìm cảnh bài giảng giáo dục công dân về quyền bầu cử, cô giáo áo đen ngồi bên trái cạnh máy tính bảng, nền lớp học hoạt hình có bảng chữ cái treo tường và chậu xương rồng.",
+      "source": "vlm",
+      "gt_video": "L25_V026",
+      "gt_frame": 20799,
+      "gt_ranges": {
+        "tol5": [
+          20794,
+          20804
+        ],
+        "tol30": [
+          20769,
+          20829
+        ],
+        "tol90": [
+          20709,
+          20889
+        ],
+        "kf_span": [
+          20724,
+          20874
+        ]
+      },
+      "keyframe_n": 200,
+      "keyframe_file": "data/keyframes/L25_V026/200.jpg",
+      "pts_time": 831.96,
+      "fps": 25.0,
+      "n_keyframes": 437,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Bảng chữ cái và chậu xương rồng trong nền hoạt hình là chi tiết riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_053",
+      "type": "KIS",
+      "query": "Tìm cảnh hội trường lễ khánh thành nhìn dọc theo thảm đỏ giữa hai dãy ghế trắng phủ nơ đỏ, trên sân khấu là các cô gái mặc áo dài đỏ ôm hoa đứng trước phông đỏ và nhiều lẵng hoa.",
+      "source": "vlm",
+      "gt_video": "L28_V021",
+      "gt_frame": 17415,
+      "gt_ranges": {
+        "tol5": [
+          17410,
+          17420
+        ],
+        "tol30": [
+          17385,
+          17445
+        ],
+        "tol90": [
+          17325,
+          17505
+        ],
+        "kf_span": [
+          17407,
+          17459
+        ]
+      },
+      "keyframe_n": 276,
+      "keyframe_file": "data/keyframes/L28_V021/276.jpg",
+      "pts_time": 696.6,
+      "fps": 25.0,
+      "n_keyframes": 401,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Bố cục nhìn dọc thảm đỏ, hai dãy ghế nơ đỏ, hàng áo dài đỏ trên sân khấu rất riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_054",
+      "type": "KIS",
+      "query": "Tìm cảnh một nữ đầu bếp mặc áo bếp trắng đang trộn tô thuỷ tinh trên bàn, bên phải là nữ dẫn chương trình mặc áo cam đất đeo tạp dề trắng cầm một gói gia vị giơ ngang ngực.",
+      "source": "vlm",
+      "gt_video": "L26_V168",
+      "gt_frame": 3840,
+      "gt_ranges": {
+        "tol5": [
+          3835,
+          3845
+        ],
+        "tol30": [
+          3810,
+          3870
+        ],
+        "tol90": [
+          3750,
+          3930
+        ],
+        "kf_span": [
+          3798,
+          3880
+        ]
+      },
+      "keyframe_n": 81,
+      "keyframe_file": "data/keyframes/L26_V168/081.jpg",
+      "pts_time": 153.6,
+      "fps": 25.0,
+      "n_keyframes": 155,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Cùng trường quay lặp nhiều tập; áo cam đất và động tác cầm gói gia vị là điểm phân biệt.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_055",
+      "type": "KIS",
+      "query": "Tìm cảnh dãy gian hàng hội chợ mái bạt trắng dựng dọc vỉa hè dưới hàng cây xanh, người đi bộ qua lại phía trước, phía sau là toà chung cư cao tầng lúc chiều tối.",
+      "source": "vlm",
+      "gt_video": "L22_V031",
+      "gt_frame": 8552,
+      "gt_ranges": {
+        "tol5": [
+          8547,
+          8557
+        ],
+        "tol30": [
+          8522,
+          8582
+        ],
+        "tol90": [
+          8462,
+          8642
+        ],
+        "kf_span": [
+          8525,
+          8566
+        ]
+      },
+      "keyframe_n": 90,
+      "keyframe_file": "data/keyframes/L22_V031/090.jpg",
+      "pts_time": 342.08,
+      "fps": 25.0,
+      "n_keyframes": 301,
+      "video_path": "data/video/Videos_L22_a/L22_V031.mp4",
+      "distinct": 4,
+      "distinct_note": "Hội chợ vỉa hè dưới tán cây khá đặc trưng nhưng có thể trùng vài phóng sự.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_056",
+      "type": "KIS",
+      "query": "Tìm video một màn múa lân trên các cột kim loại cao ngoài trời ban đêm, con lân màu trắng đen cùng các thành viên mặc trang phục màu đỏ.",
+      "source": "gemma",
+      "gt_video": "L24_V033",
+      "gt_frame": 3800,
+      "gt_ranges": {
+        "tol5": [
+          3795,
+          3805
+        ],
+        "tol30": [
+          3770,
+          3830
+        ],
+        "tol90": [
+          3710,
+          3890
+        ],
+        "kf_span": [
+          3724,
+          3869
+        ]
+      },
+      "keyframe_n": 36,
+      "keyframe_file": "data/keyframes/L24_V033/036.jpg",
+      "pts_time": 126.667,
+      "fps": 30.0,
+      "n_keyframes": 173,
+      "video_path": "data/video/Videos_L24_a/L24_V033.mp4",
+      "distinct": 5,
+      "distinct_note": "Múa lân trên cột cao là hoạt động đặc thù, dễ phân biệt với múa lân thông thường.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_057",
+      "type": "KIS",
+      "query": "Tìm cảnh cận mặt nước gợn sóng lăn tăn phản chiếu ánh nắng loá trắng, không có vật thể hay người nào trong khung hình.",
+      "source": "vlm",
+      "gt_video": "L27_V011",
+      "gt_frame": 1650,
+      "gt_ranges": {
+        "tol5": [
+          1645,
+          1655
+        ],
+        "tol30": [
+          1620,
+          1680
+        ],
+        "tol90": [
+          1560,
+          1740
+        ],
+        "kf_span": [
+          1649,
+          1650
+        ]
+      },
+      "keyframe_n": 110,
+      "keyframe_file": "data/keyframes/L27_V011/110.jpg",
+      "pts_time": 66.0,
+      "fps": 25.0,
+      "n_keyframes": 334,
+      "video_path": null,
+      "distinct": 1,
+      "distinct_note": "Cảnh mặt nước thuần tuý, hàng trăm đoạn có thể khớp — không dùng để chấm được.",
+      "needs_review": true
+    },
+    {
+      "query_id": "kis_058",
+      "type": "KIS",
+      "query": "Tìm cảnh bên trong khoang tàu vũ trụ, ba người mặc đồ đen nằm ngả trên ghế, người ở giữa giơ một tay lên chạm vào trần khoang.",
+      "source": "vlm",
+      "gt_video": "L21_V024",
+      "gt_frame": 20550,
+      "gt_ranges": {
+        "tol5": [
+          20545,
+          20555
+        ],
+        "tol30": [
+          20520,
+          20580
+        ],
+        "tol90": [
+          20460,
+          20640
+        ],
+        "kf_span": [
+          20505,
+          20625
+        ]
+      },
+      "keyframe_n": 202,
+      "keyframe_file": "data/keyframes/L21_V024/202.jpg",
+      "pts_time": 822.0,
+      "fps": 25.0,
+      "n_keyframes": 294,
+      "video_path": "data/video/Videos_L21_a/L21_V024.mp4",
+      "distinct": 5,
+      "distinct_note": "Khoang tàu vũ trụ với phi hành đoàn ngả ghế là cảnh cực hiếm.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_059",
+      "type": "KIS",
+      "query": "Tìm cảnh bài giảng sinh học với thầy giáo mặc áo sơ mi tím ngồi sau máy tính xách tay ở góc trái, chiếm phần lớn khung hình là slide trắng chứa câu hỏi trắc nghiệm bốn đáp án.",
+      "source": "vlm",
+      "gt_video": "L25_V003",
+      "gt_frame": 9571,
+      "gt_ranges": {
+        "tol5": [
+          9566,
+          9576
+        ],
+        "tol30": [
+          9541,
+          9601
+        ],
+        "tol90": [
+          9481,
+          9661
+        ],
+        "kf_span": [
+          9496,
+          9646
+        ]
+      },
+      "keyframe_n": 124,
+      "keyframe_file": "data/keyframes/L25_V003/124.jpg",
+      "pts_time": 382.84,
+      "fps": 25.0,
+      "n_keyframes": 352,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Áo sơ mi tím của thầy là chi tiết phân biệt so với các bài giảng khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_060",
+      "type": "KIS",
+      "query": "Tìm cảnh bày nguyên liệu nhìn từ trên xuống trên nền xám gồm ba miếng thịt cốt lết, củ hành tây, quả ớt đỏ, tắc, tỏi và hành tím, giữa khung là gói hạt nêm đỏ, bên phải là bảng danh sách nguyên liệu nền trắng.",
+      "source": "vlm",
+      "gt_video": "L26_V199",
+      "gt_frame": 768,
+      "gt_ranges": {
+        "tol5": [
+          763,
+          773
+        ],
+        "tol30": [
+          738,
+          798
+        ],
+        "tol90": [
+          678,
+          858
+        ],
+        "kf_span": [
+          704,
+          773
+        ]
+      },
+      "keyframe_n": 19,
+      "keyframe_file": "data/keyframes/L26_V199/019.jpg",
+      "pts_time": 30.72,
+      "fps": 25.0,
+      "n_keyframes": 170,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Bố cục flat-lay nguyên liệu kèm bảng danh sách bên phải rất dễ nhận.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_061",
+      "type": "KIS",
+      "query": "Tìm cảnh bài giảng kinh tế có cô giáo áo hồng nhạt ngồi bên trái, slide vẽ sơ đồ hai ô nối mũi tên xuống, bên dưới là ảnh nông dân gặt lúa và hình vẽ khung cửi dệt vải.",
+      "source": "vlm",
+      "gt_video": "L25_V071",
+      "gt_frame": 5550,
+      "gt_ranges": {
+        "tol5": [
+          5545,
+          5555
+        ],
+        "tol30": [
+          5520,
+          5580
+        ],
+        "tol90": [
+          5460,
+          5640
+        ],
+        "kf_span": [
+          5475,
+          5625
+        ]
+      },
+      "keyframe_n": 39,
+      "keyframe_file": "data/keyframes/L25_V071/039.jpg",
+      "pts_time": 222.0,
+      "fps": 25.0,
+      "n_keyframes": 335,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Cặp ảnh gặt lúa và khung cửi cạnh nhau là chi tiết riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_062",
+      "type": "KIS",
+      "query": "Tìm cảnh cận từ trên xuống một chiếc chảo chống dính đen đang được rót nước sốt màu nâu đỏ từ chén xuống, trong chảo đã có sẵn tỏi băm phi vàng.",
+      "source": "vlm",
+      "gt_video": "L26_V173",
+      "gt_frame": 3584,
+      "gt_ranges": {
+        "tol5": [
+          3579,
+          3589
+        ],
+        "tol30": [
+          3554,
+          3614
+        ],
+        "tol90": [
+          3494,
+          3674
+        ],
+        "kf_span": [
+          3564,
+          3606
+        ]
+      },
+      "keyframe_n": 86,
+      "keyframe_file": "data/keyframes/L26_V173/086.jpg",
+      "pts_time": 143.36,
+      "fps": 25.0,
+      "n_keyframes": 174,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Động tác rót sốt vào tỏi phi khá phổ biến trong các tập nấu ăn.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_063",
+      "type": "KIS",
+      "query": "Tìm cảnh lễ ký kết trên sân khấu với năm người đứng thành hàng ngang sau bàn phủ khăn trắng, mỗi người cầm một bìa kẹp đỏ, phía sau là màn hình lớn và rèm đỏ hai bên.",
+      "source": "vlm",
+      "gt_video": "L25_V063",
+      "gt_frame": 2502,
+      "gt_ranges": {
+        "tol5": [
+          2497,
+          2507
+        ],
+        "tol30": [
+          2472,
+          2532
+        ],
+        "tol90": [
+          2412,
+          2592
+        ],
+        "kf_span": [
+          2486,
+          2517
+        ]
+      },
+      "keyframe_n": 75,
+      "keyframe_file": "data/keyframes/L25_V063/075.jpg",
+      "pts_time": 100.08,
+      "fps": 25.0,
+      "n_keyframes": 403,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Năm người đứng cầm bìa đỏ trước màn hình lớn là bố cục dễ nhận.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_064",
+      "type": "KIS",
+      "query": "Tìm cảnh cận trong đám đông khán giả, một bé trai đội mũ vải rộng vành màu be mặc áo hoạ tiết lá, phía sau là người phụ nữ đeo kính và khẩu trang vàng nhạt.",
+      "source": "vlm",
+      "gt_video": "L24_V023",
+      "gt_frame": 4142,
+      "gt_ranges": {
+        "tol5": [
+          4137,
+          4147
+        ],
+        "tol30": [
+          4112,
+          4172
+        ],
+        "tol90": [
+          4052,
+          4232
+        ],
+        "kf_span": [
+          4123,
+          4167
+        ]
+      },
+      "keyframe_n": 39,
+      "keyframe_file": "data/keyframes/L24_V023/039.jpg",
+      "pts_time": 138.067,
+      "fps": 30.0,
+      "n_keyframes": 175,
+      "video_path": "data/video/Videos_L24_a/L24_V023.mp4",
+      "distinct": 4,
+      "distinct_note": "Cặp bé trai đội mũ be và người phụ nữ đeo kính phía sau là bố cục riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_065",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một bức tranh sáp màu của trẻ em vẽ vườn hoa với hàng rào xanh, các bông hoa cam, đỏ, vàng trên nền tím và hồng, có bàn tay giữ mép giấy phía trên.",
+      "source": "vlm",
+      "gt_video": "L25_V037",
+      "gt_frame": 10072,
+      "gt_ranges": {
+        "tol5": [
+          10067,
+          10077
+        ],
+        "tol30": [
+          10042,
+          10102
+        ],
+        "tol90": [
+          9982,
+          10162
+        ],
+        "kf_span": [
+          10061,
+          10085
+        ]
+      },
+      "keyframe_n": 137,
+      "keyframe_file": "data/keyframes/L25_V037/137.jpg",
+      "pts_time": 402.88,
+      "fps": 25.0,
+      "n_keyframes": 318,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Tranh sáp màu rực rỡ chiếm trọn khung hình, rất khó trùng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_066",
+      "type": "KIS",
+      "query": "Tìm cảnh một nữ đầu bếp áo trắng đang dùng xẻng lật chiếc bánh tròn trong chảo trên bếp, bên phải là người đàn ông mặc áo thun kem đeo tạp dề trắng đứng khoanh tay nhìn xuống.",
+      "source": "vlm",
+      "gt_video": "L26_V102",
+      "gt_frame": 5307,
+      "gt_ranges": {
+        "tol5": [
+          5302,
+          5312
+        ],
+        "tol30": [
+          5277,
+          5337
+        ],
+        "tol90": [
+          5217,
+          5397
+        ],
+        "kf_span": [
+          5277,
+          5338
+        ]
+      },
+      "keyframe_n": 107,
+      "keyframe_file": "data/keyframes/L26_V102/107.jpg",
+      "pts_time": 212.28,
+      "fps": 25.0,
+      "n_keyframes": 154,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Trường quay lặp nhiều tập; động tác lật bánh là điểm phân biệt chính.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_067",
+      "type": "KIS",
+      "query": "Tìm cảnh một phụ nữ trung niên buộc tóc, mặc áo thun trắng in chữ cái lớn màu nâu đỏ, gài micro nhỏ ở ngực, đang nói trước bức tường xám nhạt trống trơn.",
+      "source": "vlm",
+      "gt_video": "L30_V019",
+      "gt_frame": 1124,
+      "gt_ranges": {
+        "tol5": [
+          1119,
+          1129
+        ],
+        "tol30": [
+          1094,
+          1154
+        ],
+        "tol90": [
+          1034,
+          1214
+        ],
+        "kf_span": [
+          1052,
+          1196
+        ]
+      },
+      "keyframe_n": 17,
+      "keyframe_file": "data/keyframes/L30_V019/017.jpg",
+      "pts_time": 44.96,
+      "fps": 25.0,
+      "n_keyframes": 60,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Phỏng vấn trước tường trơn — bối cảnh nghèo chi tiết, dễ trùng nhiều đoạn.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_068",
+      "type": "KIS",
+      "query": "Tìm cảnh quay thẳng từ trên xuống một chiếc chảo trắng trên bếp, bên trong có bốn miếng chả thịt băm tròn dẹt đang chiên vàng nâu trong lớp dầu.",
+      "source": "vlm",
+      "gt_video": "L26_V032",
+      "gt_frame": 5107,
+      "gt_ranges": {
+        "tol5": [
+          5102,
+          5112
+        ],
+        "tol30": [
+          5077,
+          5137
+        ],
+        "tol90": [
+          5017,
+          5197
+        ],
+        "kf_span": [
+          5065,
+          5118
+        ]
+      },
+      "keyframe_n": 96,
+      "keyframe_file": "data/keyframes/L26_V032/096.jpg",
+      "pts_time": 204.28,
+      "fps": 25.0,
+      "n_keyframes": 161,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Góc quay thẳng đứng, đúng bốn miếng chả trong chảo trắng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_069",
+      "type": "KIS",
+      "query": "Tìm cảnh thi múa lân với con lân lông đỏ đang đứng trên cột sắt trước màn hình LED lớn, hai bên là vách trang trí hình rồng vàng, ban giám khảo ngồi ở bàn phủ khăn xanh bên phải.",
+      "source": "vlm",
+      "gt_video": "L24_V013",
+      "gt_frame": 2356,
+      "gt_ranges": {
+        "tol5": [
+          2351,
+          2361
+        ],
+        "tol30": [
+          2326,
+          2386
+        ],
+        "tol90": [
+          2266,
+          2446
+        ],
+        "kf_span": [
+          2304,
+          2418
+        ]
+      },
+      "keyframe_n": 28,
+      "keyframe_file": "data/keyframes/L24_V013/028.jpg",
+      "pts_time": 94.24,
+      "fps": 25.0,
+      "n_keyframes": 156,
+      "video_path": "data/video/Videos_L24_a/L24_V013.mp4",
+      "distinct": 5,
+      "distinct_note": "Lân đỏ trên cột trước màn hình LED, khác hẳn cảnh lân vàng ngoài trời.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_070",
+      "type": "KIS",
+      "query": "Tìm cảnh cận hai bàn tay của người mặc áo bếp trắng, một tay giữ hũ sứ màu kem đựng bột trắng, tay kia cầm thìa inox múc lên khỏi miệng hũ.",
+      "source": "vlm",
+      "gt_video": "L26_V104",
+      "gt_frame": 3179,
+      "gt_ranges": {
+        "tol5": [
+          3174,
+          3184
+        ],
+        "tol30": [
+          3149,
+          3209
+        ],
+        "tol90": [
+          3089,
+          3269
+        ],
+        "kf_span": [
+          3147,
+          3189
+        ]
+      },
+      "keyframe_n": 63,
+      "keyframe_file": "data/keyframes/L26_V104/063.jpg",
+      "pts_time": 127.16,
+      "fps": 25.0,
+      "n_keyframes": 155,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Hũ sứ kem cầm hai tay kèm thìa inox là bố cục cận cảnh riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_071",
+      "type": "KIS",
+      "query": "Tìm cảnh khung hình bị lỗi tín hiệu nặng, toàn bộ ảnh nhoè thành các vệt ngang màu đỏ, xanh lá và trắng chồng lên nhau, không nhận ra vật thể nào.",
+      "source": "vlm",
+      "gt_video": "L30_V096",
+      "gt_frame": 211,
+      "gt_ranges": {
+        "tol5": [
+          206,
+          216
+        ],
+        "tol30": [
+          181,
+          241
+        ],
+        "tol90": [
+          121,
+          301
+        ],
+        "kf_span": [
+          210,
+          212
+        ]
+      },
+      "keyframe_n": 21,
+      "keyframe_file": "data/keyframes/L30_V096/021.jpg",
+      "pts_time": 8.44,
+      "fps": 25.0,
+      "n_keyframes": 84,
+      "video_path": null,
+      "distinct": 1,
+      "distinct_note": "Frame HỎNG do lỗi giải mã — bộ lọc std/mean không bắt được. Phải loại khỏi bộ đo.",
+      "needs_review": true
+    },
+    {
+      "query_id": "kis_072",
+      "type": "KIS",
+      "query": "Tìm cảnh con lân lông vàng viền đỏ đang nằm vắt ngang giữa hai cột sắt trên giàn mai hoa thung, phía dưới là khán giả ngồi kín và một người mặc áo thun vàng cầm micro đứng bên trái.",
+      "source": "vlm",
+      "gt_video": "L24_V005",
+      "gt_frame": 12772,
+      "gt_ranges": {
+        "tol5": [
+          12767,
+          12777
+        ],
+        "tol30": [
+          12742,
+          12802
+        ],
+        "tol90": [
+          12682,
+          12862
+        ],
+        "kf_span": [
+          12733,
+          12834
+        ]
+      },
+      "keyframe_n": 153,
+      "keyframe_file": "data/keyframes/L24_V005/153.jpg",
+      "pts_time": 510.88,
+      "fps": 25.0,
+      "n_keyframes": 187,
+      "video_path": "data/video/Videos_L24_a/L24_V005.mp4",
+      "distinct": 4,
+      "distinct_note": "Tư thế lân vắt ngang giữa hai cột và người áo vàng cầm micro là chi tiết riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_073",
+      "type": "KIS",
+      "query": "Tìm cảnh về đích một chặng đua xe đạp, tay đua mặc áo xanh trắng giơ một tay ăn mừng khi vượt qua cổng đích màu cam, phía sau là cả đoàn đua bám sát và khán giả hai bên đường.",
+      "source": "vlm",
+      "gt_video": "L23_V016",
+      "gt_frame": 4696,
+      "gt_ranges": {
+        "tol5": [
+          4691,
+          4701
+        ],
+        "tol30": [
+          4666,
+          4726
+        ],
+        "tol90": [
+          4606,
+          4786
+        ],
+        "kf_span": [
+          4608,
+          4742
+        ]
+      },
+      "keyframe_n": 37,
+      "keyframe_file": "data/keyframes/L23_V016/037.jpg",
+      "pts_time": 187.84,
+      "fps": 25.0,
+      "n_keyframes": 69,
+      "video_path": "data/video/Videos_L23_a/L23_V016.mp4",
+      "distinct": 5,
+      "distinct_note": "Khoảnh khắc giơ tay ăn mừng dưới cổng đích cam rất dễ tách.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_074",
+      "type": "KIS",
+      "query": "Tìm cảnh sân phơi bánh tráng rộng với hàng trăm tấm vỉ trắng xếp thành luống dài, vài chồng vỉ dựng nghiêng ở tiền cảnh và một chiếc xe máy chạy phía xa.",
+      "source": "vlm",
+      "gt_video": "L29_V020",
+      "gt_frame": 1329,
+      "gt_ranges": {
+        "tol5": [
+          1324,
+          1334
+        ],
+        "tol30": [
+          1299,
+          1359
+        ],
+        "tol90": [
+          1239,
+          1419
+        ],
+        "kf_span": [
+          1328,
+          1329
+        ]
+      },
+      "keyframe_n": 111,
+      "keyframe_file": "data/keyframes/L29_V020/111.jpg",
+      "pts_time": 53.16,
+      "fps": 25.0,
+      "n_keyframes": 472,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sân phơi bánh tráng quy mô lớn; có thể trùng vài phóng sự làng nghề khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_075",
+      "type": "KIS",
+      "query": "Tìm cảnh quay từ trên cao một thành phố ven sông, cây cầu lớn bắc qua sông ở tiền cảnh, bên phải là toà nhà trắng kiểu cổ điển và một cao ốc kính đứng đơn độc giữa khu nhà thấp tầng.",
+      "source": "vlm",
+      "gt_video": "L27_V010",
+      "gt_frame": 2019,
+      "gt_ranges": {
+        "tol5": [
+          2014,
+          2024
+        ],
+        "tol30": [
+          1989,
+          2049
+        ],
+        "tol90": [
+          1929,
+          2109
+        ],
+        "kf_span": [
+          1972,
+          2022
+        ]
+      },
+      "keyframe_n": 70,
+      "keyframe_file": "data/keyframes/L27_V010/070.jpg",
+      "pts_time": 80.76,
+      "fps": 25.0,
+      "n_keyframes": 298,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Bộ ba cầu, toà nhà trắng cổ điển và cao ốc kính đơn độc rất đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_076",
+      "type": "KIS",
+      "query": "Tìm cảnh cận hai bàn tay dùng dao lớn thái củ ngưu bàng thành sợi nhỏ trên thớt gỗ, đống sợi màu trắng ngà chất giữa thớt.",
+      "source": "vlm",
+      "gt_video": "L26_V093",
+      "gt_frame": 1664,
+      "gt_ranges": {
+        "tol5": [
+          1659,
+          1669
+        ],
+        "tol30": [
+          1634,
+          1694
+        ],
+        "tol90": [
+          1574,
+          1754
+        ],
+        "kf_span": [
+          1614,
+          1679
+        ]
+      },
+      "keyframe_n": 34,
+      "keyframe_file": "data/keyframes/L26_V093/034.jpg",
+      "pts_time": 66.56,
+      "fps": 25.0,
+      "n_keyframes": 158,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Sợi ngưu bàng màu trắng ngà trên thớt gỗ, cận cảnh dao lớn.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_077",
+      "type": "KIS",
+      "query": "Tìm cảnh dòng nước chảy xiết tung bọt trắng xoá tràn qua các tảng đá đen ướt, khung hình chỉ có nước và đá.",
+      "source": "vlm",
+      "gt_video": "L30_V033",
+      "gt_frame": 2575,
+      "gt_ranges": {
+        "tol5": [
+          2570,
+          2580
+        ],
+        "tol30": [
+          2545,
+          2605
+        ],
+        "tol90": [
+          2485,
+          2665
+        ],
+        "kf_span": [
+          2527,
+          2593
+        ]
+      },
+      "keyframe_n": 73,
+      "keyframe_file": "data/keyframes/L30_V033/073.jpg",
+      "pts_time": 103.0,
+      "fps": 25.0,
+      "n_keyframes": 243,
+      "video_path": null,
+      "distinct": 2,
+      "distinct_note": "Cảnh suối chảy thuần tuý, dễ trùng nhiều phóng sự thiên nhiên — cần rà tay.",
+      "needs_review": true
+    },
+    {
+      "query_id": "kis_078",
+      "type": "KIS",
+      "query": "Tìm cảnh một đầu bếp nam lớn tuổi mặc áo bếp trắng và một nữ dẫn chương trình mặc áo cam đeo tạp dề trắng cùng cúi đầu chào, bên phải bàn bếp có cây thông Noel trang trí.",
+      "source": "vlm",
+      "gt_video": "L26_V073",
+      "gt_frame": 1116,
+      "gt_ranges": {
+        "tol5": [
+          1111,
+          1121
+        ],
+        "tol30": [
+          1086,
+          1146
+        ],
+        "tol90": [
+          1026,
+          1206
+        ],
+        "kf_span": [
+          1054,
+          1178
+        ]
+      },
+      "keyframe_n": 22,
+      "keyframe_file": "data/keyframes/L26_V073/022.jpg",
+      "pts_time": 44.64,
+      "fps": 25.0,
+      "n_keyframes": 154,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Cây thông Noel là chi tiết hiếm, tách được khỏi các tập cùng trường quay.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_079",
+      "type": "KIS",
+      "query": "Tìm cảnh trên sông lúc trời mờ sáng, hai chiếc ghe lớn mui che neo cạnh nhau với các cây sào dựng đứng, đám lục bình trôi bên mạn và một xuồng nhỏ chở hai người phía xa bên phải.",
+      "source": "vlm",
+      "gt_video": "L28_V014",
+      "gt_frame": 10125,
+      "gt_ranges": {
+        "tol5": [
+          10120,
+          10130
+        ],
+        "tol30": [
+          10095,
+          10155
+        ],
+        "tol90": [
+          10035,
+          10215
+        ],
+        "kf_span": [
+          10095,
+          10153
+        ]
+      },
+      "keyframe_n": 187,
+      "keyframe_file": "data/keyframes/L28_V014/187.jpg",
+      "pts_time": 405.0,
+      "fps": 25.0,
+      "n_keyframes": 438,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Ghe mui che với sào dựng đứng và lục bình là cảnh sông nước miền Tây khá riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_080",
+      "type": "KIS",
+      "query": "Tìm cảnh quay từ trên cao xuống nhóm khoảng mười tay đua xe đạp đang bám nhau trên mặt đường nhựa có vạch đứt trắng, hai bên là hàng rào quảng cáo và dải cỏ xanh.",
+      "source": "vlm",
+      "gt_video": "L23_V015",
+      "gt_frame": 6161,
+      "gt_ranges": {
+        "tol5": [
+          6156,
+          6166
+        ],
+        "tol30": [
+          6131,
+          6191
+        ],
+        "tol90": [
+          6071,
+          6251
+        ],
+        "kf_span": [
+          6094,
+          6209
+        ]
+      },
+      "keyframe_n": 47,
+      "keyframe_file": "data/keyframes/L23_V015/047.jpg",
+      "pts_time": 246.44,
+      "fps": 25.0,
+      "n_keyframes": 75,
+      "video_path": "data/video/Videos_L23_a/L23_V015.mp4",
+      "distinct": 4,
+      "distinct_note": "Góc nhìn thẳng từ trên xuống đoàn đua là chi tiết bố cục riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_081",
+      "type": "KIS",
+      "query": "Tìm cảnh bên trong một hội chợ triển lãm đông nghịt người đeo ba lô, bên phải là gian hàng hình vòm sơn cam trắng có màn hình nhiều màu, trần nhà cao lắp đầy đèn.",
+      "source": "vlm",
+      "gt_video": "L21_V025",
+      "gt_frame": 22830,
+      "gt_ranges": {
+        "tol5": [
+          22825,
+          22835
+        ],
+        "tol30": [
+          22800,
+          22860
+        ],
+        "tol90": [
+          22740,
+          22920
+        ],
+        "kf_span": [
+          22828,
+          22890
+        ]
+      },
+      "keyframe_n": 229,
+      "keyframe_file": "data/keyframes/L21_V025/229.jpg",
+      "pts_time": 913.2,
+      "fps": 25.0,
+      "n_keyframes": 286,
+      "video_path": "data/video/Videos_L21_a/L21_V025.mp4",
+      "distinct": 4,
+      "distinct_note": "Gian hàng vòm cam trắng là điểm nhận dạng chính giữa đám đông.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_082",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một khối bơ vàng nhạt đặt trên đĩa gỗ nhỏ, bên trái là mấy củ hành tím còn nguyên vỏ, phía sau là rổ rau xanh mờ nhoè.",
+      "source": "vlm",
+      "gt_video": "L26_V099",
+      "gt_frame": 640,
+      "gt_ranges": {
+        "tol5": [
+          635,
+          645
+        ],
+        "tol30": [
+          610,
+          670
+        ],
+        "tol90": [
+          550,
+          730
+        ],
+        "kf_span": [
+          576,
+          656
+        ]
+      },
+      "keyframe_n": 17,
+      "keyframe_file": "data/keyframes/L26_V099/017.jpg",
+      "pts_time": 25.6,
+      "fps": 25.0,
+      "n_keyframes": 143,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Khối bơ trên đĩa gỗ với hành tím tiền cảnh là bố cục riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_083",
+      "type": "KIS",
+      "query": "Tìm cảnh một nữ phóng viên nước ngoài tóc đen dài mặc váy đen đứng giữa ruộng ngô đã khô vàng, hai tay dang ra khi nói, nền trời xanh trong.",
+      "source": "vlm",
+      "gt_video": "L21_V016",
+      "gt_frame": 20724,
+      "gt_ranges": {
+        "tol5": [
+          20719,
+          20729
+        ],
+        "tol30": [
+          20694,
+          20754
+        ],
+        "tol90": [
+          20634,
+          20814
+        ],
+        "kf_span": [
+          20670,
+          20739
+        ]
+      },
+      "keyframe_n": 179,
+      "keyframe_file": "data/keyframes/L21_V016/179.jpg",
+      "pts_time": 690.833,
+      "fps": 30.0,
+      "n_keyframes": 269,
+      "video_path": "data/video/Videos_L21_a/L21_V016.mp4",
+      "distinct": 5,
+      "distinct_note": "Phóng viên đứng giữa ruộng ngô khô, cảnh nước ngoài rất hiếm trong kho.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_084",
+      "type": "KIS",
+      "query": "Tìm cảnh cận sạp bán khô ở chợ, chính giữa là con cá khô lớn xẻ banh hình quạt màu nâu sẫm đặt trên mẹt tre, xung quanh là nhiều mẹt khô khác và túi ni lông.",
+      "source": "vlm",
+      "gt_video": "L27_V009",
+      "gt_frame": 6925,
+      "gt_ranges": {
+        "tol5": [
+          6920,
+          6930
+        ],
+        "tol30": [
+          6895,
+          6955
+        ],
+        "tol90": [
+          6835,
+          7015
+        ],
+        "kf_span": [
+          6904,
+          6946
+        ]
+      },
+      "keyframe_n": 222,
+      "keyframe_file": "data/keyframes/L27_V009/222.jpg",
+      "pts_time": 277.0,
+      "fps": 25.0,
+      "n_keyframes": 354,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Con cá khô xẻ banh hình quạt chiếm giữa khung là hình ảnh rất đặc trưng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_085",
+      "type": "KIS",
+      "query": "Tìm cảnh thi múa lân ban đêm, con lân lông trắng xanh lá được nâng bổng lên cao khỏi hàng cột đánh số, phía sau là vách trang trí hình rồng vàng và cờ đuôi nheo.",
+      "source": "vlm",
+      "gt_video": "L24_V038",
+      "gt_frame": 2736,
+      "gt_ranges": {
+        "tol5": [
+          2731,
+          2741
+        ],
+        "tol30": [
+          2706,
+          2766
+        ],
+        "tol90": [
+          2646,
+          2826
+        ],
+        "kf_span": [
+          2696,
+          2790
+        ]
+      },
+      "keyframe_n": 28,
+      "keyframe_file": "data/keyframes/L24_V038/028.jpg",
+      "pts_time": 91.2,
+      "fps": 30.0,
+      "n_keyframes": 149,
+      "video_path": "data/video/Videos_L24_a/L24_V038.mp4",
+      "distinct": 5,
+      "distinct_note": "Lân trắng xanh được nâng bổng ban đêm, khác các cảnh lân vàng/đỏ khác.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_086",
+      "type": "KIS",
+      "query": "Tìm cảnh quay từ trên cao xuống hai tay đua xe đạp bám sát nhau sát dải rào quảng cáo bên phải, mặt đường trống trải chiếm phần lớn khung hình bên trái.",
+      "source": "vlm",
+      "gt_video": "L23_V009",
+      "gt_frame": 6450,
+      "gt_ranges": {
+        "tol5": [
+          6445,
+          6455
+        ],
+        "tol30": [
+          6420,
+          6480
+        ],
+        "tol90": [
+          6360,
+          6540
+        ],
+        "kf_span": [
+          6397,
+          6512
+        ]
+      },
+      "keyframe_n": 49,
+      "keyframe_file": "data/keyframes/L23_V009/049.jpg",
+      "pts_time": 258.0,
+      "fps": 25.0,
+      "n_keyframes": 61,
+      "video_path": "data/video/Videos_L23_a/L23_V009.mp4",
+      "distinct": 3,
+      "distinct_note": "Dễ trùng với các cảnh quay flycam khác trong cùng giải đua.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_087",
+      "type": "KIS",
+      "query": "Tìm cảnh toàn sân thi đấu múa lân ban đêm nhìn từ trên cao, sàn đấu xanh dương viền hồng, đội múa rồng vàng đang biểu diễn ở giữa, khán giả ngồi kín quanh sân dưới mái bạt.",
+      "source": "vlm",
+      "gt_video": "L24_V003",
+      "gt_frame": 9327,
+      "gt_ranges": {
+        "tol5": [
+          9322,
+          9332
+        ],
+        "tol30": [
+          9297,
+          9357
+        ],
+        "tol90": [
+          9237,
+          9417
+        ],
+        "kf_span": [
+          9271,
+          9335
+        ]
+      },
+      "keyframe_n": 110,
+      "keyframe_file": "data/keyframes/L24_V003/110.jpg",
+      "pts_time": 373.08,
+      "fps": 25.0,
+      "n_keyframes": 240,
+      "video_path": "data/video/Videos_L24_a/L24_V003.mp4",
+      "distinct": 5,
+      "distinct_note": "Sàn xanh viền hồng nhìn toàn cảnh từ trên cao là bố cục rất riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_088",
+      "type": "KIS",
+      "query": "Tìm cảnh một đầu bếp nam lớn tuổi mặc áo bếp trắng viền đỏ đứng chắp tay bên trái, nữ dẫn chương trình mặc áo đen đeo tạp dề trắng đứng bên phải, giữa là bếp gas đôi trên đảo bếp trắng.",
+      "source": "vlm",
+      "gt_video": "L26_V046",
+      "gt_frame": 944,
+      "gt_ranges": {
+        "tol5": [
+          939,
+          949
+        ],
+        "tol30": [
+          914,
+          974
+        ],
+        "tol90": [
+          854,
+          1034
+        ],
+        "kf_span": [
+          891,
+          1008
+        ]
+      },
+      "keyframe_n": 19,
+      "keyframe_file": "data/keyframes/L26_V046/019.jpg",
+      "pts_time": 37.8,
+      "fps": 25.0,
+      "n_keyframes": 147,
+      "video_path": null,
+      "distinct": 2,
+      "distinct_note": "Gần như trùng khít nhiều tập cùng trường quay — không đủ phân biệt, cần rà tay.",
+      "needs_review": true
+    },
+    {
+      "query_id": "kis_089",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một chiếc chảo hoa văn caro đang nghiêng đổ đống vụn vàng giòn xuống chiếc đĩa trắng hình cánh hoa đặt trên mặt bàn trắng.",
+      "source": "vlm",
+      "gt_video": "L26_V160",
+      "gt_frame": 2944,
+      "gt_ranges": {
+        "tol5": [
+          2939,
+          2949
+        ],
+        "tol30": [
+          2914,
+          2974
+        ],
+        "tol90": [
+          2854,
+          3034
+        ],
+        "kf_span": [
+          2923,
+          2946
+        ]
+      },
+      "keyframe_n": 62,
+      "keyframe_file": "data/keyframes/L26_V160/062.jpg",
+      "pts_time": 117.76,
+      "fps": 25.0,
+      "n_keyframes": 146,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Chảo hoạ tiết caro và đĩa cánh hoa là đồ vật riêng, dễ nhận.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_090",
+      "type": "KIS",
+      "query": "Tìm cảnh quay dọc hai người ngồi ngoài sân: người đàn ông đội nón lá đang gõ chiếc trống kim loại hình đĩa bay, cô gái áo thun xám ngồi bên phải cầm ly nước màu xanh lá trên bàn gỗ nguyên khối viền vàng.",
+      "source": "vlm",
+      "gt_video": "L30_V017",
+      "gt_frame": 5374,
+      "gt_ranges": {
+        "tol5": [
+          5369,
+          5379
+        ],
+        "tol30": [
+          5344,
+          5404
+        ],
+        "tol90": [
+          5284,
+          5464
+        ],
+        "kf_span": [
+          5373,
+          5434
+        ]
+      },
+      "keyframe_n": 106,
+      "keyframe_file": "data/keyframes/L30_V017/106.jpg",
+      "pts_time": 214.96,
+      "fps": 25.0,
+      "n_keyframes": 135,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Trống handpan và bàn gỗ nguyên khối viền vàng là tổ hợp rất hiếm.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_091",
+      "type": "KIS",
+      "query": "Tìm cảnh một nữ đầu bếp trung niên mặc áo bếp trắng viền đỏ đang nói trước ống kính, phía sau là hốc tủ gỗ trưng bình hoa cúc trắng và hai gói bột chiên.",
+      "source": "vlm",
+      "gt_video": "L26_V039",
+      "gt_frame": 5400,
+      "gt_ranges": {
+        "tol5": [
+          5395,
+          5405
+        ],
+        "tol30": [
+          5370,
+          5430
+        ],
+        "tol90": [
+          5310,
+          5490
+        ],
+        "kf_span": [
+          5376,
+          5432
+        ]
+      },
+      "keyframe_n": 110,
+      "keyframe_file": "data/keyframes/L26_V039/110.jpg",
+      "pts_time": 216.0,
+      "fps": 25.0,
+      "n_keyframes": 167,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Hốc tủ trưng bình cúc trắng cạnh hai gói bột là nền riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_092",
+      "type": "KIS",
+      "query": "Tìm cảnh một người đàn ông mặc áo sơ mi hoạ tiết lá màu cam đất đứng cạnh một phụ nữ mặc áo dài hoa đào nhạt trong cửa hàng tường trắng, bên phải là kệ xếp đầy hũ nhựa nhãn vàng.",
+      "source": "vlm",
+      "gt_video": "L29_V006",
+      "gt_frame": 3024,
+      "gt_ranges": {
+        "tol5": [
+          3019,
+          3029
+        ],
+        "tol30": [
+          2994,
+          3054
+        ],
+        "tol90": [
+          2934,
+          3114
+        ],
+        "kf_span": [
+          2997,
+          3037
+        ]
+      },
+      "keyframe_n": 83,
+      "keyframe_file": "data/keyframes/L29_V006/083.jpg",
+      "pts_time": 120.96,
+      "fps": 25.0,
+      "n_keyframes": 408,
+      "video_path": null,
+      "distinct": 5,
+      "distinct_note": "Kệ hũ nhãn vàng xếp kín cùng cặp trang phục cam đất và áo dài hoa là tổ hợp riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_093",
+      "type": "KIS",
+      "query": "Tìm cảnh một người đàn ông đội mũ vải nâu, mặc áo thun kem và quần đùi xanh than, đứng đưa tay chạm lưng đàn bò sữa lang đen trắng trong chuồng mái tôn.",
+      "source": "vlm",
+      "gt_video": "L21_V010",
+      "gt_frame": 3058,
+      "gt_ranges": {
+        "tol5": [
+          3053,
+          3063
+        ],
+        "tol30": [
+          3028,
+          3088
+        ],
+        "tol90": [
+          2968,
+          3148
+        ],
+        "kf_span": [
+          2999,
+          3134
+        ]
+      },
+      "keyframe_n": 31,
+      "keyframe_file": "data/keyframes/L21_V010/031.jpg",
+      "pts_time": 122.32,
+      "fps": 25.0,
+      "n_keyframes": 268,
+      "video_path": "data/video/Videos_L21_a/L21_V010.mp4",
+      "distinct": 5,
+      "distinct_note": "Người đứng giữa đàn bò sữa trong chuồng, hành động đưa tay chạm lưng bò.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_094",
+      "type": "KIS",
+      "query": "Tìm cảnh cận hai bàn tay dùng phới dẹt màu đen vét hỗn hợp kem màu xanh nhạt từ tô thuỷ tinh lớn xuống một chén thuỷ tinh nhỏ đặt trên mặt bàn trắng.",
+      "source": "vlm",
+      "gt_video": "L26_V196",
+      "gt_frame": 4608,
+      "gt_ranges": {
+        "tol5": [
+          4603,
+          4613
+        ],
+        "tol30": [
+          4578,
+          4638
+        ],
+        "tol90": [
+          4518,
+          4698
+        ],
+        "kf_span": [
+          4579,
+          4629
+        ]
+      },
+      "keyframe_n": 89,
+      "keyframe_file": "data/keyframes/L26_V196/089.jpg",
+      "pts_time": 184.32,
+      "fps": 25.0,
+      "n_keyframes": 139,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Màu kem xanh nhạt và phới dẹt đen là chi tiết phân biệt được.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_095",
+      "type": "KIS",
+      "query": "Tìm cảnh phối cảnh đồ hoạ ba chiều nhìn từ trên cao về một nút giao cao tốc hình vòng cung bắc qua đường sắt, xung quanh là nhà dân mái tôn nhiều màu và ruộng đồng.",
+      "source": "vlm",
+      "gt_video": "L22_V014",
+      "gt_frame": 3417,
+      "gt_ranges": {
+        "tol5": [
+          3412,
+          3422
+        ],
+        "tol30": [
+          3387,
+          3447
+        ],
+        "tol90": [
+          3327,
+          3507
+        ],
+        "kf_span": [
+          3325,
+          3462
+        ]
+      },
+      "keyframe_n": 29,
+      "keyframe_file": "data/keyframes/L22_V014/029.jpg",
+      "pts_time": 113.9,
+      "fps": 30.0,
+      "n_keyframes": 287,
+      "video_path": "data/video/Videos_L22_a/L22_V014.mp4",
+      "distinct": 5,
+      "distinct_note": "Ảnh dựng 3D quy hoạch, khác hẳn cảnh quay thật — rất dễ tách.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_096",
+      "type": "KIS",
+      "query": "Tìm cảnh một đoàn cán bộ đi bộ trong ngõ, chính giữa là người phụ nữ tóc ngắn đeo kính mặc áo khoác len xám, hai bên là hai người đàn ông mặc sơ mi trắng đang cười.",
+      "source": "vlm",
+      "gt_video": "L22_V023",
+      "gt_frame": 4035,
+      "gt_ranges": {
+        "tol5": [
+          4030,
+          4040
+        ],
+        "tol30": [
+          4005,
+          4065
+        ],
+        "tol90": [
+          3945,
+          4125
+        ],
+        "kf_span": [
+          3960,
+          4042
+        ]
+      },
+      "keyframe_n": 45,
+      "keyframe_file": "data/keyframes/L22_V023/045.jpg",
+      "pts_time": 161.4,
+      "fps": 25.0,
+      "n_keyframes": 300,
+      "video_path": "data/video/Videos_L22_a/L22_V023.mp4",
+      "distinct": 4,
+      "distinct_note": "Bố cục ba người đi hàng ngang, áo len xám giữa hai áo trắng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_097",
+      "type": "KIS",
+      "query": "Tìm cảnh một phụ nữ mặc áo sơ mi kẻ caro đỏ tím ngồi trong xưởng nền xi măng, phía sau lưng là chiếu hoa trải đất và đống đất sét nhão đặt trên bao tải.",
+      "source": "vlm",
+      "gt_video": "L28_V019",
+      "gt_frame": 24300,
+      "gt_ranges": {
+        "tol5": [
+          24295,
+          24305
+        ],
+        "tol30": [
+          24270,
+          24330
+        ],
+        "tol90": [
+          24210,
+          24390
+        ],
+        "kf_span": [
+          24257,
+          24336
+        ]
+      },
+      "keyframe_n": 407,
+      "keyframe_file": "data/keyframes/L28_V019/407.jpg",
+      "pts_time": 972.0,
+      "fps": 25.0,
+      "n_keyframes": 467,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Đống đất sét nhão sau lưng cho biết bối cảnh làng gốm, khá riêng.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_098",
+      "type": "KIS",
+      "query": "Tìm cảnh một nữ đầu bếp áo trắng đang dùng đũa đảo chiếc chảo màu cam trên bếp lửa xanh, bên phải là người đàn ông mặc áo thun vàng nhạt đeo tạp dề trắng đứng nhìn.",
+      "source": "vlm",
+      "gt_video": "L26_V065",
+      "gt_frame": 4960,
+      "gt_ranges": {
+        "tol5": [
+          4955,
+          4965
+        ],
+        "tol30": [
+          4930,
+          4990
+        ],
+        "tol90": [
+          4870,
+          5050
+        ],
+        "kf_span": [
+          4954,
+          5008
+        ]
+      },
+      "keyframe_n": 106,
+      "keyframe_file": "data/keyframes/L26_V065/106.jpg",
+      "pts_time": 198.4,
+      "fps": 25.0,
+      "n_keyframes": 158,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Chảo cam và áo thun vàng nhạt là điểm phân biệt yếu trong cùng trường quay.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_099",
+      "type": "KIS",
+      "query": "Tìm cảnh cận một tô sứ trắng đựng thịt băm trộn cà rốt hạt lựu, nấm mèo và hành lá, đang được một chiếc thìa inox đảo lên tạo vệt mờ chuyển động.",
+      "source": "vlm",
+      "gt_video": "L26_V145",
+      "gt_frame": 2580,
+      "gt_ranges": {
+        "tol5": [
+          2575,
+          2585
+        ],
+        "tol30": [
+          2550,
+          2610
+        ],
+        "tol90": [
+          2490,
+          2670
+        ],
+        "kf_span": [
+          2570,
+          2628
+        ]
+      },
+      "keyframe_n": 54,
+      "keyframe_file": "data/keyframes/L26_V145/054.jpg",
+      "pts_time": 103.2,
+      "fps": 25.0,
+      "n_keyframes": 155,
+      "video_path": null,
+      "distinct": 3,
+      "distinct_note": "Động tác trộn nhân khá phổ biến trong nhiều tập nấu ăn.",
+      "needs_review": false
+    },
+    {
+      "query_id": "kis_100",
+      "type": "KIS",
+      "query": "Tìm cảnh nữ đầu bếp áo trắng đang lăn bột một miếng thực phẩm trên quầy đá hoa cương, bên phải là người đàn ông mặc áo thun nâu đeo tạp dề trắng, phía sau là hai hốc kệ gỗ trưng bình gốm và cây cảnh.",
+      "source": "vlm",
+      "gt_video": "L26_V025",
+      "gt_frame": 2700,
+      "gt_ranges": {
+        "tol5": [
+          2695,
+          2705
+        ],
+        "tol30": [
+          2670,
+          2730
+        ],
+        "tol90": [
+          2610,
+          2790
+        ],
+        "kf_span": [
+          2682,
+          2700
+        ]
+      },
+      "keyframe_n": 52,
+      "keyframe_file": "data/keyframes/L26_V025/052.jpg",
+      "pts_time": 108.0,
+      "fps": 25.0,
+      "n_keyframes": 132,
+      "video_path": null,
+      "distinct": 4,
+      "distinct_note": "Trường quay quầy đá hoa cương với hốc kệ gỗ, khác trường quay bếp trắng thường gặp.",
+      "needs_review": false
+    }
+  ]
+}
