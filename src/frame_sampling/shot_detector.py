@@ -41,9 +41,6 @@ class Shot:
         return (self.end_frame + 1) / self.fps
 
 
-# --------------------------------------------------------------------------- #
-# Backend 1: PySceneDetect (mặc định, không cần weights)
-# --------------------------------------------------------------------------- #
 def _detect_pyscenedetect(video_path: str, threshold: float, min_scene_len: int,
                           show_progress: bool = True) -> List[Shot]:
     from scenedetect import open_video, SceneManager
@@ -74,9 +71,6 @@ def _detect_pyscenedetect(video_path: str, threshold: float, min_scene_len: int,
     return shots
 
 
-# --------------------------------------------------------------------------- #
-# Backend 2: TransNetV2 (detector của team)
-# --------------------------------------------------------------------------- #
 def _ensure_ffmpeg() -> None:
     """TransNetV2 giải mã video qua ffmpeg-python -> cần binary `ffmpeg`.
     Ta dùng ffmpeg ĐÓNG GÓI TRONG VENV (imageio-ffmpeg), không cài gì vào máy:
@@ -131,13 +125,6 @@ def _detect_transnetv2(video_path: str, prob_threshold: float,
     ]
 
 
-# --------------------------------------------------------------------------- #
-# Backend 3: AutoShot — detector mà CẢ HAI đội vô địch HCMC 2025 dùng
-#   U-CESE (arxiv 2605.23274) tr.7 : "We utilize AutoShot [28] for this task"
-#   Vortex (arxiv 2606.19682) tr.5 : "we utilize AutoShot [18] to segment the video"
-# Paper AutoShot (arxiv 2304.06116): vượt TransNetV2 +4.2% F1 trên tập SHOT.
-# Kiến trúc là biến thể NAS của TransNetV2 -> tiền xử lý/cửa sổ y hệt TransNetV2.
-# --------------------------------------------------------------------------- #
 _AUTOSHOT_CKPT_URL = ("https://huggingface.co/backseollgi/AutoShot/"
                       "resolve/main/ckpt_0_200_0.pth")
 _AUTOSHOT_CACHE = {}

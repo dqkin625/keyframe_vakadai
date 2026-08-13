@@ -20,9 +20,6 @@ import numpy as np
 _NEG = -1e18
 
 
-# --------------------------------------------------------------------------- #
-# LÕI — quy hoạch động bảo toàn thứ tự (DANTE-style)
-# --------------------------------------------------------------------------- #
 def align_sequence(sim: np.ndarray,
                    pos: Optional[Sequence[int]] = None,
                    min_gap: int = 1,
@@ -92,9 +89,6 @@ def align_sequence(sim: np.ndarray,
     return idx, float(dp[n - 1, end])
 
 
-# --------------------------------------------------------------------------- #
-# Ma trận tương đồng + trộn mô thức
-# --------------------------------------------------------------------------- #
 def _l2norm(x: np.ndarray) -> np.ndarray:
     x = np.asarray(x, dtype=np.float32)
     if x.ndim == 1:
@@ -156,9 +150,6 @@ def fuse_scores(sims: Dict[str, np.ndarray],
     return out / max(wsum, 1e-9)
 
 
-# --------------------------------------------------------------------------- #
-# Ghim frame về đỉnh chuyển động (khoảnh khắc TRAKE = cực trị động học)
-# --------------------------------------------------------------------------- #
 def snap_to_apex(center_frame: int, flow_frames: Sequence[int],
                  flow_mag: Sequence[float], radius: int = 5) -> int:
     """Trong bán kính `radius` quanh `center_frame`, chọn frame có |optical-flow| LỚN NHẤT.
@@ -179,9 +170,6 @@ def snap_to_apex(center_frame: int, flow_frames: Sequence[int],
     return int(sub_f[int(np.argmax(sub_v))])
 
 
-# --------------------------------------------------------------------------- #
-# Rải frame_id dưới ngân sách 100 đáp án (PDF mục 2)
-# --------------------------------------------------------------------------- #
 def build_submission(phase_frames: Sequence[int],
                      budget: int = 100,
                      stride: int = 8,
@@ -221,9 +209,6 @@ def build_submission(phase_frames: Sequence[int],
     return out
 
 
-# --------------------------------------------------------------------------- #
-# ĐẦU-CUỐI: N mô tả (chữ) -> mỗi khoảnh khắc 1 frame
-# --------------------------------------------------------------------------- #
 def localize_phases(phase_texts: Sequence[str],
                     candidates: List[dict],
                     clip_text_fn=None,

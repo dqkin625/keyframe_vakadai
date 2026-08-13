@@ -89,9 +89,10 @@ def convert(video_dir: str, video_id: str, id_style: str) -> list:
             if not line.strip():
                 continue
             r = json.loads(line)
-            kf_n = int(r["id"])
+            kf_n = int(r.get("n", r["id"] + 1)) - 1
             shot_n = int(r["shot_index"])
-            frame_idx = int(r["frame_index"])
+            # schema mới dùng `frame_idx`; bản cũ dùng `frame_index` -> nhận cả hai
+            frame_idx = int(r["frame_idx"] if "frame_idx" in r else r["frame_index"])
             if id_style == "global":
                 kf_id = f"{video_id}_kf{kf_n:06d}"
                 shot_id = f"{video_id}_shot{shot_n:05d}"

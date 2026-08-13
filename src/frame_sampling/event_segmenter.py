@@ -61,9 +61,6 @@ class Event:
         return self.anchor_frame / self.fps
 
 
-# --------------------------------------------------------------------------- #
-# Bộ lọc 1D bằng numpy (thay scipy)
-# --------------------------------------------------------------------------- #
 def _gauss_kernel(sigma: float) -> np.ndarray:
     r = max(1, int(round(3.0 * sigma)))
     x = np.arange(-r, r + 1, dtype=np.float32)
@@ -115,9 +112,6 @@ def _local_maxima(y: np.ndarray, thr: float) -> List[int]:
     return out
 
 
-# --------------------------------------------------------------------------- #
-# Tín hiệu 1 — PA (GEBD, ICCV 2021 arXiv:2101.10511)
-# --------------------------------------------------------------------------- #
 def _pa_curve(feats: np.ndarray, w: int) -> np.ndarray:
     """feats: (m, d) đặc trưng theo thời gian. Trả về đường cong 'khó đoán' (m,).
 
@@ -145,9 +139,6 @@ def _pa_curve(feats: np.ndarray, w: int) -> np.ndarray:
     return out
 
 
-# --------------------------------------------------------------------------- #
-# Tín hiệu 2 — TURN: điểm ngoặt động học (tự thiết kế)
-# --------------------------------------------------------------------------- #
 def _turn_curve(per: Sequence[Tuple[float, float, float, float]], w: int) -> np.ndarray:
     """per[i] = (dx, dy, mag, coh) cho BƯỚC i (chuyển động frame i-1 -> i); per[0] = 0.
 
@@ -204,9 +195,6 @@ def _describe_motion(per_slice: Sequence[Tuple[float, float, float, float]],
     return _dir_phrase(dx, dy, mag, coh, still), mag
 
 
-# --------------------------------------------------------------------------- #
-# API chính — cắt 1 shot thành chuỗi sự kiện
-# --------------------------------------------------------------------------- #
 def segment_shot_events(video_id: str, shot, fidxs: Sequence[int],
                         grays: Sequence[np.ndarray],
                         per: Sequence[Tuple[float, float, float, float]],
@@ -315,9 +303,6 @@ def segment_events(video_id: str, cand_by_shot: Dict[int, list], shots,
     return out
 
 
-# --------------------------------------------------------------------------- #
-# Gom shot liền kề -> SCENE (chuỗi sự kiện trải qua nhiều shot)
-# --------------------------------------------------------------------------- #
 def group_scenes(shots, cand_by_shot: Dict[int, list], cfg: dict) -> Dict[int, int]:
     """Gom các shot LIỀN KỀ có ngoại hình giống nhau thành SCENE. Trả về {shot_index: scene_id}.
 
@@ -362,9 +347,6 @@ def group_scenes(shots, cand_by_shot: Dict[int, list], cfg: dict) -> Dict[int, i
     return scene_of
 
 
-# --------------------------------------------------------------------------- #
-# TẦNG DÀY — tinh chỉnh ranh giới tới TỪNG FRAME (chỉ chạy cho video đã khoanh)
-# --------------------------------------------------------------------------- #
 def refine_boundaries(video_path: str, frames: Sequence[int], fps: float,
                       radius_sec: float = 0.5) -> Dict[int, int]:
     """Giải mã lại vùng lân cận mỗi ranh giới ở STRIDE 1 rồi chốt điểm ngoặt CHÍNH XÁC.

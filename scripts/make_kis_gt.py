@@ -41,10 +41,6 @@ MAP_DIR = "data/map-keyframes-aic25-b1/map-keyframes"
 VIDEO_ROOT = "data/video"
 OUT_PATH = "data/eval/kis_gt.json"
 
-# Các mức dung sai frame quanh đáp án. Tên -> nửa bề rộng cửa sổ.
-#   tol5  : sát ví dụ KIS của BTC ([500,510] = ±5)
-#   tol30 : ~1 giây ở 30fps
-#   tol90 : ~3 giây, cỡ khoảng cách 2 keyframe BTC
 TOLERANCES = {"tol5": 5, "tol30": 30, "tol90": 90}
 
 # Ảnh bị loại nếu độ lệch chuẩn mức xám dưới ngưỡng này (gần như một màu: đen, trắng, fade).

@@ -20,23 +20,9 @@ CAPTION = "mock"           # ⚠ TẠM: chỉ chạy tới TRƯỚC caption (moc
                            # caption: gemma (API free, nhanh, song song, ko cần GPU) | qwen3-vl (local) | blip | mock
 DEVICE = "cuda"            # cuda (GPU) | cpu
 
-# Caption ở mức SHOT hay KEYFRAME:
-#   "auto"     - tự nhận diện (khuyến nghị): ít shot/phút -> keyframe, nhiều -> shot
-#   "shot"     - 1 caption/shot     (video tin tức, phóng sự)
-#   "keyframe" - 1 caption/keyframe (CCTV, POV - vì cả video chỉ 1 shot)
 CAPTION_LEVEL = "shot"     # shot: 1 caption/shot mô tả HÀNH ĐỘNG (gửi nhiều keyframe/1 request)
                            #        | keyframe: 1 caption/ảnh tĩnh | auto: tự chọn theo mật độ shot
 
-# Chọn STRATEGY theo LOẠI VIDEO:
-#   ► Video ĐÃ DỰNG (tin tức, phóng sự — có chuyển cảnh):
-#       "adaptive"     - middle + thêm khi đổi nội dung        (mặc định, nhanh)
-#       "clip_reldiff" - VORTEX tr.5: CLIP embedding, rel_diff>0.4  (chính xác nhất, cần open_clip_torch)
-#       "middle"       - 1 frame/shot                          (nhẹ nhất)
-#   ► Video QUAY LIÊN TỤC (CCTV, POV/kính — KHÔNG có chuyển cảnh):
-#       "dake"         - DAKE gốc U-CESE tr.5-6, phân tích JPEG toàn video
-#                        ⚠ BẮT BUỘC dùng cái này; "adaptive" sẽ chỉ ra ~3 keyframe cho cả video!
-#       "action"       - MỚI: mỗi shot lấy tới N keyframe rải đều thời gian, CHỈ giữ frame
-#                        THỰC SỰ đổi (ngưỡng cao) -> phục vụ caption HÀNH ĐỘNG. Đi kèm CAPTION_LEVEL="shot".
 STRATEGY = "action"        # ← caption theo shot mô tả diễn biến; đổi "dake"/"adaptive" nếu cần
                            #    (dake = 1 keyframe/đoạn cho video quay liên tục)
 # ═════════════════════════════════════════════════════════
@@ -78,7 +64,6 @@ import time                                       # noqa: E402
 import yaml                                       # noqa: E402
 
 from src.pipeline import process_video, run, finalize_output   # noqa: E402
-from src.captioning import build_captioner        # noqa: E402
 
 
 VIDEO_EXT = (".mp4", ".mkv", ".avi", ".mov", ".webm")
@@ -102,9 +87,6 @@ def main():
         cfg = yaml.safe_load(f)
     cfg["shot_detection"]["detector"] = DETECTOR
     cfg["keyframe"]["strategy"] = STRATEGY
-    cfg["caption"]["backend"] = CAPTION
-    cfg["caption"]["device"] = DEVICE
-    cfg["caption"]["level"] = CAPTION_LEVEL
 
     out_dir = cfg["paths"]["output_dir"]
     os.makedirs(out_dir, exist_ok=True)
@@ -131,10 +113,9 @@ def main():
                 print("(chưa có video nào trong " + cfg["paths"]["video_dir"] + ")")
             sys.exit(1)
 
-        captioner = build_captioner(cfg["caption"])
-        recs, embs, evs = process_video(path, cfg, captioner)
+        recs, embs, evs = process_video(path, cfg)
         video_id = os.path.splitext(os.path.basename(path))[0]   # lưu riêng theo tên video
-        out = finalize_output(recs, {k: [embs.get(k)] for k in ("clip", "siglip", "caption")},
+        out = finalize_output(recs, {},
                               out_dir, subdir=video_id, all_events=evs)
         out_dir = os.path.join(out_dir, video_id)                # để in đường dẫn đúng bên dưới
         n_shot = sum(1 for _ in open(out["shots"], encoding="utf-8"))
@@ -150,7 +131,7 @@ def main():
     el = time.time() - t0
     print("\n" + "=" * 58)
     print(f"  XONG trong {el:.1f}s  →  {n_shot} shot, {n_kf} keyframe, {n_ev} sự kiện")
-    print(f"  {out_dir}\\shots.jsonl      (caption theo shot)")
+    print(f"  {out_dir}\\shots.jsonl      (mốc shot)")
     print(f"  {out_dir}\\keyframes.jsonl  (từng keyframe)")
     print(f"  {out_dir}\\events.jsonl     (chuỗi sự kiện có thứ tự - TRAKE)")
     print(f"  {out_dir}\\keyframes\\       (ảnh)")

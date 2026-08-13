@@ -35,9 +35,6 @@ except Exception:
 GT_PATH = "data/eval/kis_gt.json"
 JSONL_PATH = "data/eval/kis_queries.jsonl"
 
-# Văn phong bám ví dụ của BTC (thể lệ sơ tuyển, trang 1):
-#   "Tìm video về một diễn giả mặc áo đỏ phát biểu tại một cuộc họp báo ngoài trời,
-#    phía sau có nhiều cây xanh."
 PROMPT = """Bạn đang soạn ĐỀ THI cho cuộc thi truy vấn video tiếng Việt (Textual KIS).
 Nhìn tấm ảnh dưới đây và viết MỘT câu truy vấn mô tả cảnh trong ảnh, đúng văn phong ban giám khảo.
 

@@ -766,9 +766,6 @@ class GemmaAPICaptioner(ShotCaptioner):
         self._log_dist()
         return results
 
-    # GÁN NHÃN CHO CHUỖI SỰ KIỆN (nguyên liệu TRAKE): ranh giới do tín hiệu cắt (event_segmenter),
-    # VLM chỉ gán nhãn ngữ nghĩa. ⚠️ TUYỆT ĐỐI không để model tự khai mốc giây — nó chỉ thấy vài ảnh
-    # rời rạc nên mọi con số giây là BỊA. Neo an toàn: gửi đúng 1 ảnh đại diện/sự kiện, theo thứ tự.
     _EVENT_PROMPT = (
         "Dưới đây là {n} ảnh trích theo THỨ TỰ THỜI GIAN từ CÙNG một cảnh quay. "
         "Mỗi ảnh đại diện cho MỘT đoạn hành động liên tiếp.\n"

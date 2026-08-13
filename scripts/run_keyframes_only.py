@@ -1,5 +1,5 @@
 """
-Chạy pipeline ĐẾN HẾT bước keyframe, DỪNG TRƯỚC caption — cho cả một thư mục video.
+Chạy pipeline trích keyframe cho cả một thư mục video.
 
     python -u scripts/run_keyframes_only.py data/video/Videos_L21_a > logs/kf_L21.log 2>&1
     python -u scripts/run_keyframes_only.py data/video/Videos_L21_a --force   # làm lại video đã xong
@@ -10,13 +10,6 @@ LÀM GÌ (đúng thứ tự trong src/pipeline.py):
   3. Ghi ảnh keyframe + metadata.
   4. Dựng chuỗi sự kiện TRAKE (`build_event_records`) — thuần tín hiệu, KHÔNG gọi model.
 
-KHÔNG LÀM:
-  - **caption**: dùng `MockCaptioner` -> không gọi API, không nạp VLM. Trường `caption`
-    trong output là chuỗi giả, ĐỪNG dùng.
-  - **embedding** (CLIP/SigLIP keyframe + e5 caption): tầng này nằm SAU caption trong
-    pipeline. Nếu chạy bây giờ thì `caption_emb.npy` sẽ là embedding của caption GIẢ —
-    dữ liệu rác dễ bị nhầm là thật. Bật lại bằng `embedding.enabled` khi đã có caption thật.
-  - **gán nhãn sự kiện bằng VLM**: `MockCaptioner` không có `label_events_batch` nên bị bỏ qua.
 
 CÓ RESUME: video nào đã có `keyframes.jsonl` thì bỏ qua (trừ khi `--force`).
 """
@@ -91,9 +84,6 @@ def _is_done(out_root: str, kf_subdir: str, vid: str):
             return False, f"{f} rỗng"
     with open(os.path.join(d, "keyframes.jsonl"), encoding="utf-8") as fh:
         n_row = sum(1 for line in fh if line.strip())
-    # Ảnh có thể nằm ở HAI bố cục: phẳng (pipeline vừa ghi ra) hoặc đã gom theo bộ
-    # (sau khi chạy group_keyframes_by_collection.py). Phải nhận cả hai, nếu không thì
-    # mọi video đã gom sẽ bị coi là CHƯA CHẠY và bị làm lại từ đầu.
     coll = vid.split("_")[0]
     img_dir = None
     for cand in (os.path.join(out_root, kf_subdir, vid),
@@ -136,16 +126,11 @@ def main():
 
     import yaml
     from src.pipeline import process_video, finalize_output
-    from src.captioning import build_captioner
 
     with open("config.yaml", encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
     cfg["shot_detection"]["detector"] = args.detector
     cfg["keyframe"]["strategy"] = args.strategy
-    cfg["caption"]["backend"] = "mock"          # KHÔNG caption
-    cfg["caption"]["level"] = "shot"
-    cfg["caption"]["event_labels"] = False      # không gán nhãn sự kiện bằng VLM
-    cfg["embedding"]["enabled"] = False         # tầng embedding nằm SAU caption -> tắt
     if args.dedup_threshold is not None:
         cfg["keyframe"]["keyframe_dedup_threshold"] = args.dedup_threshold
 
@@ -167,7 +152,6 @@ def main():
     _log(f"keyframe_dedup_threshold={cfg['keyframe']['keyframe_dedup_threshold']} "
          f"| action_max_gap_sec={cfg['keyframe'].get('action_max_gap_sec')} "
          f"| action_max_gap_min_diff={cfg['keyframe'].get('action_max_gap_min_diff')}")
-    _log("caption=MOCK (KHÔNG gọi API) | embedding=TẮT | nhãn sự kiện=TẮT")
 
     todo = []
     for v in videos:
@@ -183,8 +167,6 @@ def main():
     if not todo:
         return
 
-    captioner = build_captioner(cfg["caption"])     # MockCaptioner, dựng 1 lần
-
     t_all = time.time()
     tot_shot = tot_kf = tot_ev = 0
     ok, failed = [], []
@@ -196,13 +178,12 @@ def main():
         _log(f"[{i}/{len(todo)}] {vid}  ({size_mb:.0f} MB)")
         t0 = time.time()
         try:
-            recs, embs, evs = process_video(path, cfg, captioner)
+            recs, embs, evs = process_video(path, cfg)
             if not recs:
                 _log(f"      ⚠️  {vid}: không ra keyframe nào -> BỎ QUA")
                 failed.append((vid, "0 keyframe"))
                 continue
-            finalize_output(recs, {k: [embs.get(k)] for k in ("clip", "siglip", "caption")},
-                            out_root, subdir=vid, all_events=evs)
+            finalize_output(recs, {}, out_root, subdir=vid, all_events=evs)
             n_shot = len({r["shot_index"] for r in recs})
             tot_shot += n_shot
             tot_kf += len(recs)
@@ -230,8 +211,7 @@ def main():
         _log(f"  ✗ {len(failed)} video LỖI:")
         for vid, err in failed:
             _log(f"      {vid}: {err}")
-    _log("NHẮC: trường `caption` trong output là GIẢ (mock). Chạy bước caption riêng khi cần.")
-
+    
 
 if __name__ == "__main__":
     main()

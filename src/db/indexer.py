@@ -19,9 +19,6 @@ import json
 from typing import List, Optional
 
 
-# --------------------------------------------------------------------------- #
-# MILVUS — vector ANN cho keyframe (đơn vị EMBEDDING)
-# --------------------------------------------------------------------------- #
 def init_milvus(dim=512, uri="http://localhost:19530", coll="keyframe_clip"):
     """Tạo collection Milvus (HNSW/COSINE). dim khớp CLIP: 512 (ViT-B) / 768 (ViT-L)."""
     from pymilvus import MilvusClient, DataType
@@ -56,9 +53,6 @@ def search_milvus(client, coll, query_vec: list, topk=100):
     return [hit["id"] for hit in res[0]]
 
 
-# --------------------------------------------------------------------------- #
-# ELASTICSEARCH — text/metadata cấp shot (đơn vị TRUY XUẤT)
-# --------------------------------------------------------------------------- #
 def init_es(url="http://localhost:9200", index="shots"):
     """Tạo index với mapping tối ưu cho tiếng Việt: caption/ocr full-text, còn lại để filter."""
     from elasticsearch import Elasticsearch

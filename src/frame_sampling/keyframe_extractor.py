@@ -547,9 +547,6 @@ def _action_select_motion(cand_by_shot, shots, cfg):
     step_thr = float(cfg.get("action_motion_step", 5.0))     # tổng motion để CÓ THÊM 1 keyframe
     still = float(cfg.get("action_still_level", 0.5))         # mức trung bình dưới đây = tĩnh
     n_hint = max(1, int(cfg.get("action_hint_segments", 3)))  # số đoạn tóm tắt trong hint
-    # TRẦN LỖ HỔNG: không để trống quá ngần này giây trong 1 shot (0 = tắt). Bù cho việc
-    # số keyframe chỉ nhìn LƯỢNG CHUYỂN ĐỘNG, không nhìn THỜI LƯỢNG (shot tĩnh dài vẫn chỉ
-    # 2 keyframe). Đo keyframe BTC (L21_V001/2/3): trần 7.00-7.04s -> mặc định 7.0.
     max_gap = int(float(cfg.get("action_max_gap_sec", 7.0)) * fps)
 
     selected, hints, per_by_shot = [], {}, {}
@@ -814,9 +811,6 @@ def dedup_keyframes(keyframes: List[Keyframe], threshold: float,
             if not kept or all(_hist_diff(h, kh) > threshold for kh in kept_h):
                 kept.append(kf); kept_h.append(h)
 
-        # LƯỢT 2 — BÙ cho đủ trần: đi qua keyframe SỐNG SÓT, chỗ nào hở quá trần thì lấy lại
-        # keyframe đã loại ở lượt 1. PHẢI làm SAU dedup (làm trước thì dedup xoá đúng frame
-        # vừa chèn vì cảnh tĩnh ảnh giống nhau).
         if max_gap_frames > 0 and len(kept) < len(allkf):
             # PHẢI phủ tới tận CUỐI shot: shot TĨNH dài bị dedup gộp về 1 keyframe -> không
             # còn "cặp" để chèn; chỉ lặp trên `kept` sẽ bỏ sót đúng shot cần bù nhất.
