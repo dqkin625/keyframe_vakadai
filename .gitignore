@@ -56,3 +56,7 @@ proxies.txt
 # ===== CAU HINH CONG CU THEO MAY — TUNG CHUA API KEY, TUYET DOI KHONG COMMIT =====
 .claude/settings.json
 .claude/settings.local.json
+
+# ===== REPO SEARCH CUA BAN (clone rieng, khong commit vao repo keyframe) =====
+AIHCM/
+Vakada/

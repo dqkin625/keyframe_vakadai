@@ -1,0 +1,1202 @@
+[
+  {
+    "query_id": "q001",
+    "Queries": "Đoạn video có một chiếc xuồng gỗ mui che màu trắng neo sát bờ một cánh đồng ngập nước phủ đầy lục bình. Tiền cảnh là một tấm bê tông vuông nhô ra mặt nước.",
+    "video_id": "L28_V001",
+    "range_frame_id": [
+      9829,
+      9841
+    ],
+    "shot_id": [
+      "shot0080"
+    ]
+  },
+  {
+    "query_id": "q002",
+    "Queries": "Đoạn video có tấm biển chỉ đường màu xanh dương ghi CỬA KHẨU LONG BÌNH 4.8km và TTTM QUỐC THÁI 4km. Bên phải biển là tán lá cây khoai mì che một phần.",
+    "video_id": "L28_V001",
+    "range_frame_id": [
+      12849,
+      12861
+    ],
+    "shot_id": [
+      "shot0112"
+    ]
+  },
+  {
+    "query_id": "q003",
+    "Queries": "Đoạn video quay cận thân một cây cổ thụ rất lớn với hàng trăm sợi rễ phụ buông thẳng xuống phủ kín vỏ cây. Thân cây có nhiều hốc lõm sâu.",
+    "video_id": "L28_V001",
+    "range_frame_id": [
+      18079,
+      18091
+    ],
+    "shot_id": [
+      "shot0146"
+    ]
+  },
+  {
+    "query_id": "q004",
+    "Queries": "Đoạn video có một phụ nữ mặc áo sơ mi hồng đội nón lá bọc vải hoa đứng bên hai chiếc rổ tre lớn đựng đậu phộng. Góc phải có chiếc túi kẻ ô in chữ CHANEL.",
+    "video_id": "L28_V001",
+    "range_frame_id": [
+      29564,
+      29576
+    ],
+    "shot_id": [
+      "shot0217"
+    ]
+  },
+  {
+    "query_id": "q005",
+    "Queries": "Đoạn video quay một xưởng phân loại đậu phộng, hàng chục phụ nữ đội nón lá ngồi quanh các bàn kim loại chất đầy đậu. Một người đàn ông mặc áo khoác vàng đứng giữa xưởng.",
+    "video_id": "L28_V001",
+    "range_frame_id": [
+      29749,
+      29761
+    ],
+    "shot_id": [
+      "shot0219"
+    ]
+  },
+  {
+    "query_id": "q006",
+    "Queries": "Đoạn video quay từ mặt sông nâu đục nhìn vào bờ cây xanh rậm rạp. Bên phải là một bè nổi mái tôn có đặt máy móc.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      1529,
+      1541
+    ],
+    "shot_id": [
+      "shot0012"
+    ]
+  },
+  {
+    "query_id": "q007",
+    "Queries": "Đoạn video có một cửa hàng dệt thổ cẩm vách gỗ sơn xanh lá, phía trước đặt chiếc ghế băng trắng có chữ HAI BÉ. Một xe máy phủ bạt xanh dương đậu trước cửa.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      23284,
+      23296
+    ],
+    "shot_id": [
+      "shot0170"
+    ]
+  },
+  {
+    "query_id": "q008",
+    "Queries": "Đoạn video quay một khu chợ ngoài trời, tiền cảnh có rổ hành tím, rổ hành tây vàng và rổ xoài xanh. Giữa khung hình một phụ nữ đội nón lá đang dắt xe đạp đi qua.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      24549,
+      24561
+    ],
+    "shot_id": [
+      "shot0183"
+    ]
+  },
+  {
+    "query_id": "q009",
+    "Queries": "Đoạn video quay từ trên xuống hàng trăm con nghêu vỏ nâu sọc trải kín một mặt khay kim loại ướt.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      24784,
+      24796
+    ],
+    "shot_id": [
+      "shot0184"
+    ]
+  },
+  {
+    "query_id": "q010",
+    "Queries": "Đoạn video quay bên trong một thánh đường Hồi giáo có hàng cột tròn sơn trắng viền xanh lá. Một bé gái đội khăn trùm đầu màu đen mặc váy hồng đứng cạnh cánh cửa kính.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      26359,
+      26371
+    ],
+    "shot_id": [
+      "shot0198"
+    ]
+  },
+  {
+    "query_id": "q011",
+    "Queries": "Đoạn video quay bên ngoài một thánh đường Hồi giáo tường trắng viền xanh lá, trên nóc có tháp vòm gắn biểu tượng trăng lưỡi liềm. Bên phải là chùm hoa giấy màu hồng đậm.",
+    "video_id": "L28_V002",
+    "range_frame_id": [
+      27299,
+      27311
+    ],
+    "shot_id": [
+      "shot0204"
+    ]
+  },
+  {
+    "query_id": "q012",
+    "Queries": "Đoạn video có một người đàn ông mặc áo trắng nằm nghỉ trên chiếc võng mắc giữa hai gốc cây bên bờ sông rộng. Cạnh võng có một chiếc bàn gỗ thô.",
+    "video_id": "L28_V003",
+    "range_frame_id": [
+      11799,
+      11811
+    ],
+    "shot_id": [
+      "shot0065"
+    ]
+  },
+  {
+    "query_id": "q013",
+    "Queries": "Đoạn video có một ngôi chùa Hòa Hảo mái ngói đỏ hai tầng, mặt tiền treo biển đỏ chữ vàng ghi BAN QUẢN TỰ AN HÒA TỰ. Trước sân xếp một hàng chậu cây cảnh.",
+    "video_id": "L28_V003",
+    "range_frame_id": [
+      13424,
+      13436
+    ],
+    "shot_id": [
+      "shot0076"
+    ]
+  },
+  {
+    "query_id": "q014",
+    "Queries": "Đoạn video quay một buổi đờn ca tài tử trong chợ, khoảng mười người đàn ông ngồi hai hàng đối diện trên ghế nhựa xanh. Người ngoài cùng bên phải đang gảy đàn kìm.",
+    "video_id": "L28_V003",
+    "range_frame_id": [
+      22789,
+      22801
+    ],
+    "shot_id": [
+      "shot0172"
+    ]
+  },
+  {
+    "query_id": "q015",
+    "Queries": "Đoạn video có một người đàn ông lớn tuổi mặc áo thun sọc xanh trắng ôm đàn ghi ta ở tiền cảnh. Phía sau là sạp quần áo treo đầy váy và đồ bộ nhiều màu.",
+    "video_id": "L28_V003",
+    "range_frame_id": [
+      22949,
+      22961
+    ],
+    "shot_id": [
+      "shot0174"
+    ]
+  },
+  {
+    "query_id": "q016",
+    "Queries": "Đoạn video có một người đàn ông mặc áo thun xanh lá ngồi trên sàn gỗ bè cá, hai tay bốc thức ăn từ mấy bao ni lông đựng rau củ băm nhỏ.",
+    "video_id": "L28_V004",
+    "range_frame_id": [
+      9779,
+      9791
+    ],
+    "shot_id": [
+      "shot0067"
+    ]
+  },
+  {
+    "query_id": "q017",
+    "Queries": "Đoạn video quay từ trong một chòi bè nuôi cá ra mặt sông, mái chòi phủ lưới xanh. Giữa khung hình một người đàn ông cởi trần đội nón lá đang ngồi cho cá ăn.",
+    "video_id": "L28_V004",
+    "range_frame_id": [
+      9884,
+      9896
+    ],
+    "shot_id": [
+      "shot0068"
+    ]
+  },
+  {
+    "query_id": "q018",
+    "Queries": "Đoạn video quay từ trên cao xuống một ngôi trường có dãy nhà hai tầng sơn vàng mái ngói đỏ bao quanh sân trong. Giữa sân có một bức tượng đặt trên bệ cao.",
+    "video_id": "L28_V004",
+    "range_frame_id": [
+      13444,
+      13456
+    ],
+    "shot_id": [
+      "shot0091"
+    ]
+  },
+  {
+    "query_id": "q019",
+    "Queries": "Đoạn video quay từ trên xuống hai tấm bê tông lớn nằm trên nền đất, mỗi tấm chạm nổi hình đầu rồng bằng xi măng đã bong tróc loang lổ.",
+    "video_id": "L28_V004",
+    "range_frame_id": [
+      25219,
+      25231
+    ],
+    "shot_id": [
+      "shot0174"
+    ]
+  },
+  {
+    "query_id": "q020",
+    "Queries": "Đoạn video quay trên boong một chiếc phà đang qua sông, nhiều người ngồi trên xe máy đậu dọc hai bên. Giữa phà là cabin lái sơn trắng xanh.",
+    "video_id": "L28_V004",
+    "range_frame_id": [
+      26349,
+      26361
+    ],
+    "shot_id": [
+      "shot0183"
+    ]
+  },
+  {
+    "query_id": "q021",
+    "Queries": "Đoạn video có một người phụ nữ đội nón lá bọc vải xanh dương họa tiết hoa trắng, mặt quấn kín bằng khăn rằn ô vuông đỏ trắng chỉ hở đôi mắt. Người này mặc áo khoác hồng.",
+    "video_id": "L28_V005",
+    "range_frame_id": [
+      20784,
+      20796
+    ],
+    "shot_id": [
+      "shot0146"
+    ]
+  },
+  {
+    "query_id": "q022",
+    "Queries": "Đoạn video quay một con phố chợ đông người với hàng chục chiếc đèn lồng nhiều màu treo giăng ngang trên cao. Hai bên đường là các sạp hàng lưu niệm.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      6829,
+      6841
+    ],
+    "shot_id": [
+      "shot0048"
+    ]
+  },
+  {
+    "query_id": "q023",
+    "Queries": "Đoạn video có cổng tam quan một ngôi miếu, phía trên treo biển đỏ chữ vàng ghi CHÙA XỨ THÁNH MIẾU. Hai bên chân cổng có bảng xanh chữ trắng LỐI VÀO.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      7624,
+      7636
+    ],
+    "shot_id": [
+      "shot0056"
+    ]
+  },
+  {
+    "query_id": "q024",
+    "Queries": "Đoạn video quay kiến trúc một ngôi chùa tường vàng với hàng cột tròn đắp hoa văn trắng và các vòm cửa nhọn kiểu Ấn. Bên trái có phù điêu tròn chạm hình người.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      8729,
+      8741
+    ],
+    "shot_id": [
+      "shot0066"
+    ]
+  },
+  {
+    "query_id": "q025",
+    "Queries": "Đoạn video có một dãy phố với biển hiệu đỏ LOAN THẢO và bảng vàng QUÁN CƠM bên trái, biển PHƯƠNG THI và THU LAN MỸ PHẨM bên phải. Một người đàn ông mặc áo hoa đang băng qua đường.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      9229,
+      9241
+    ],
+    "shot_id": [
+      "shot0072"
+    ]
+  },
+  {
+    "query_id": "q026",
+    "Queries": "Đoạn video quay khu chợ bán khô mắm với các biển hiệu lớn ghi 9999 CÔ ÚT, BÀ GIÁO KHỎE 666666 và KIM HẰNG. Các sạp chất đầy khô cá và tôm khô trong thau vàng.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      10824,
+      10836
+    ],
+    "shot_id": [
+      "shot0084"
+    ]
+  },
+  {
+    "query_id": "q027",
+    "Queries": "Đoạn video có một người đàn ông mặc áo thun đỏ nằm trên chiếc võng lưới xanh dương mắc trên sàn gỗ ven sông. Dưới sàn có một con chó lông vàng và hai con mèo.",
+    "video_id": "L28_V006",
+    "range_frame_id": [
+      25804,
+      25816
+    ],
+    "shot_id": [
+      "shot0217"
+    ]
+  },
+  {
+    "query_id": "q028",
+    "Queries": "Đoạn video có hai người đàn ông đứng giữa ruộng lúa chín vàng. Người lớn tuổi bên trái mặc áo thun tím đang giơ tay chỉ về phía trước, người trẻ hơn mặc áo đen sọc trắng.",
+    "video_id": "L28_V007",
+    "range_frame_id": [
+      19439,
+      19451
+    ],
+    "shot_id": [
+      "shot0121"
+    ]
+  },
+  {
+    "query_id": "q029",
+    "Queries": "Đoạn video có một cây cầu treo cũ bắc qua sông, tháp cầu bằng thép hoen gỉ màu nâu đỏ. Giữa lòng sông có một cột bê tông nhô lên.",
+    "video_id": "L28_V007",
+    "range_frame_id": [
+      20284,
+      20296
+    ],
+    "shot_id": [
+      "shot0127"
+    ]
+  },
+  {
+    "query_id": "q030",
+    "Queries": "Đoạn video quay mặt tiền một ngôi đình tường vàng, phía trên đắp nổi dòng chữ đỏ ĐÌNH THẦN HÒA THẠNH. Hai bên có hai tượng rồng nhỏ nhiều màu.",
+    "video_id": "L28_V007",
+    "range_frame_id": [
+      22714,
+      22726
+    ],
+    "shot_id": [
+      "shot0141"
+    ]
+  },
+  {
+    "query_id": "q031",
+    "Queries": "Đoạn video quay cận một bộ rễ cây cổ thụ khổng lồ bị xói lở trơ ra khỏi mặt đất bờ hồ, các nhánh rễ sần sùi vươn ngang ra phía mặt nước.",
+    "video_id": "L28_V008",
+    "range_frame_id": [
+      14484,
+      14496
+    ],
+    "shot_id": [
+      "shot0094"
+    ]
+  },
+  {
+    "query_id": "q032",
+    "Queries": "Đoạn video quay một đoạn quốc lộ có hàng rào sắt sơn xanh lá chạy dọc bên trái. Giữa khung hình là một cây thân trắng ít lá mọc sát lề đường.",
+    "video_id": "L28_V008",
+    "range_frame_id": [
+      15804,
+      15816
+    ],
+    "shot_id": [
+      "shot0104"
+    ]
+  },
+  {
+    "query_id": "q033",
+    "Queries": "Đoạn video quay bên trong một khu chợ có mái che, lối đi lát gạch caro nâu trắng. Hai bên là các sạp chất cao chai lọ, bình giữ nhiệt và đồ nhựa.",
+    "video_id": "L28_V008",
+    "range_frame_id": [
+      16234,
+      16246
+    ],
+    "shot_id": [
+      "shot0108"
+    ]
+  },
+  {
+    "query_id": "q034",
+    "Queries": "Đoạn video có một người đàn ông lớn tuổi tóc hoa râm mặc áo sơ mi xanh rêu kiểu bộ đội, đang đưa tay trái chỉ về phía sau khi nói. Phía sau là con kênh và hàng cây tràm.",
+    "video_id": "L28_V008",
+    "range_frame_id": [
+      24619,
+      24631
+    ],
+    "shot_id": [
+      "shot0174"
+    ]
+  },
+  {
+    "query_id": "q035",
+    "Queries": "Đoạn video có cổng vào một ngôi nhà nông thôn với cánh cổng sắt uốn hoa văn sơn màu xanh ngọc. Dưới đất đặt một bao xi măng màu trắng.",
+    "video_id": "L28_V009",
+    "range_frame_id": [
+      10174,
+      10186
+    ],
+    "shot_id": [
+      "shot0072"
+    ]
+  },
+  {
+    "query_id": "q036",
+    "Queries": "Đoạn video có một phụ nữ mặc áo hoa đen trắng ngồi quay lưng dệt vải trên khung cửi gỗ lớn. Bên phải là một phụ nữ đứng bế em bé mặc áo hồng.",
+    "video_id": "L28_V009",
+    "range_frame_id": [
+      17584,
+      17596
+    ],
+    "shot_id": [
+      "shot0142"
+    ]
+  },
+  {
+    "query_id": "q037",
+    "Queries": "Đoạn video có một người đàn ông cởi trần mặc quần kẻ sọc đang đạp xe đạp trên con đường bê tông nhỏ trong xóm. Bên phải một phụ nữ áo xanh dắt hai đứa trẻ đi bộ.",
+    "video_id": "L28_V009",
+    "range_frame_id": [
+      18234,
+      18246
+    ],
+    "shot_id": [
+      "shot0149"
+    ]
+  },
+  {
+    "query_id": "q038",
+    "Queries": "Đoạn video quay ngược sáng từ dưới nhìn lên ngọn một cây thốt nốt cao. Trên thân cây có gắn thang tre và thấp thoáng bóng một người đang leo lên gần ngọn.",
+    "video_id": "L28_V009",
+    "range_frame_id": [
+      27429,
+      27441
+    ],
+    "shot_id": [
+      "shot0239"
+    ]
+  },
+  {
+    "query_id": "q039",
+    "Queries": "Đoạn video quay flycam xuống một khu rừng tràm rộng lớn có con lạch nước sẫm màu uốn quanh. Góc dưới bên trái có một chiếc xuồng nhỏ đậu ven thảm bèo xanh.",
+    "video_id": "L28_V010",
+    "range_frame_id": [
+      4394,
+      4406
+    ],
+    "shot_id": [
+      "shot0033"
+    ]
+  },
+  {
+    "query_id": "q040",
+    "Queries": "Đoạn video có một người đàn ông mặc áo sơ mi xanh dương ngồi chèo chiếc xuồng composite trắng xanh giữa đầm sen. Phía sau xuồng là một phụ nữ đội nón lá mặc áo đỏ.",
+    "video_id": "L28_V010",
+    "range_frame_id": [
+      4939,
+      4951
+    ],
+    "shot_id": [
+      "shot0038"
+    ]
+  },
+  {
+    "query_id": "q041",
+    "Queries": "Đoạn video có ba con cò trắng đậu trên ngọn cây tràm, một con đứng cạnh chiếc tổ làm bằng cành khô ở giữa khung hình phía dưới.",
+    "video_id": "L28_V010",
+    "range_frame_id": [
+      6169,
+      6181
+    ],
+    "shot_id": [
+      "shot0050"
+    ]
+  },
+  {
+    "query_id": "q042",
+    "Queries": "Đoạn video quay một xưởng làm hàng thủ công từ lá thốt nốt, tường treo kín tranh đóng khung gỗ. Một cụ ông tóc bạc mặc áo sơ mi sọc đứng giữa cầm một dải lá cong.",
+    "video_id": "L28_V010",
+    "range_frame_id": [
+      13329,
+      13341
+    ],
+    "shot_id": [
+      "shot0107"
+    ]
+  },
+  {
+    "query_id": "q043",
+    "Queries": "Đoạn video quay một rừng cây thốt nốt thân cao vươn thẳng, tán lá xòe tròn như quạt. Phía sau là một ngọn núi thấp phủ cây xanh.",
+    "video_id": "L28_V010",
+    "range_frame_id": [
+      19149,
+      19161
+    ],
+    "shot_id": [
+      "shot0153"
+    ]
+  },
+  {
+    "query_id": "q044",
+    "Queries": "Đoạn video có hai người phụ nữ đội nón lá ngồi ở sạp chợ bán trái cây màu đen bóng đựng trong hai chiếc rổ nhựa xanh lá và đỏ. Người bên phải mặc áo kẻ caro đỏ đang bốc trái bỏ vào túi.",
+    "video_id": "L28_V011",
+    "range_frame_id": [
+      6744,
+      6756
+    ],
+    "shot_id": [
+      "shot0063"
+    ]
+  },
+  {
+    "query_id": "q045",
+    "Queries": "Đoạn video quay bên trong một ngôi miếu người Hoa có hai cột lớn sơn đỏ viết chữ Hán vàng. Hai bên bàn thờ đặt hai chiếc lục bình sứ men xanh trắng cỡ lớn thắt nơ đỏ.",
+    "video_id": "L28_V011",
+    "range_frame_id": [
+      13004,
+      13016
+    ],
+    "shot_id": [
+      "shot0119"
+    ]
+  },
+  {
+    "query_id": "q046",
+    "Queries": "Đoạn video quay trong một ngôi đình cổ, treo lủng lẳng gần chục chiếc lọng che nhiều màu đỏ, vàng, xanh có tua rua. Bên phải là tủ thờ gỗ chạm khảm xà cừ.",
+    "video_id": "L28_V011",
+    "range_frame_id": [
+      18959,
+      18971
+    ],
+    "shot_id": [
+      "shot0158"
+    ]
+  },
+  {
+    "query_id": "q047",
+    "Queries": "Đoạn video quay từ dưới lên bức tường tầng hai sơn xanh ngọc và trắng có dãy khung vòm cong đều nhau. Trên mỗi cột treo một bông hoa trang trí màu vàng đỏ có chữ.",
+    "video_id": "L28_V011",
+    "range_frame_id": [
+      24404,
+      24416
+    ],
+    "shot_id": [
+      "shot0193"
+    ]
+  },
+  {
+    "query_id": "q048",
+    "Queries": "Đoạn video quay từ trên xe máy chạy trên phố, bên phải là ngôi miếu người Hoa sơn màu hồng có mái cong nhiều tầng. Giữa lòng đường có một cây cổ thụ thân xoắn mọc trên dải phân cách.",
+    "video_id": "L28_V011",
+    "range_frame_id": [
+      25554,
+      25566
+    ],
+    "shot_id": [
+      "shot0202"
+    ]
+  },
+  {
+    "query_id": "q049",
+    "Queries": "Đoạn video có một di tích khảo cổ nền gạch cổ nằm trong hố sâu, phía trên có mái tôn lớn che nắng. Trên hành lang quan sát phía sau có bốn người đang đứng xem.",
+    "video_id": "L28_V012",
+    "range_frame_id": [
+      7589,
+      7601
+    ],
+    "shot_id": [
+      "shot0051"
+    ]
+  },
+  {
+    "query_id": "q050",
+    "Queries": "Đoạn video quay từ trên cao xuống một hố khai quật khảo cổ, lộ ra nền móng gạch cổ xếp thành từng ô vuông trên nền đất nâu.",
+    "video_id": "L28_V012",
+    "range_frame_id": [
+      8044,
+      8056
+    ],
+    "shot_id": [
+      "shot0052"
+    ]
+  },
+  {
+    "query_id": "q051",
+    "Queries": "Đoạn video quay ngước lên trần một ngôi đình cổ, giữa treo một chiếc lọng vải đỏ lớn có tua rua. Xung quanh là các mảng gỗ chạm khắc thếp vàng hình rồng.",
+    "video_id": "L28_V012",
+    "range_frame_id": [
+      17554,
+      17566
+    ],
+    "shot_id": [
+      "shot0103"
+    ]
+  },
+  {
+    "query_id": "q052",
+    "Queries": "Đoạn video quay chính diện một bàn thờ trong đình, giữa là bức hoành phi đỏ viết chữ Hán THẦN màu vàng cỡ lớn. Phía dưới đặt tượng một vị thần và lư hương đồng.",
+    "video_id": "L28_V012",
+    "range_frame_id": [
+      18309,
+      18321
+    ],
+    "shot_id": [
+      "shot0107"
+    ]
+  },
+  {
+    "query_id": "q053",
+    "Queries": "Đoạn video có hai người đàn ông mặc áo sơ mi xanh dương đứng quay lưng vái trước bàn thờ có chữ Hán THẦN. Hai bên khung hình là hai thùng công đức màu vàng.",
+    "video_id": "L28_V012",
+    "range_frame_id": [
+      18604,
+      18616
+    ],
+    "shot_id": [
+      "shot0108"
+    ]
+  },
+  {
+    "query_id": "q054",
+    "Queries": "Đoạn video quay một ngã tư đường phố rộng, giữa vòng xoay có một bức tượng đài đặt trên bệ cao. Bên trái một phụ nữ đội nón lá đang quét đường.",
+    "video_id": "L28_V013",
+    "range_frame_id": [
+      10019,
+      10031
+    ],
+    "shot_id": [
+      "shot0079"
+    ]
+  },
+  {
+    "query_id": "q055",
+    "Queries": "Đoạn video có nhiều chiếc xuồng gỗ cũ neo sát mép bờ sông nước đục màu nâu. Giữa khung hình một người đàn ông đang đứng trên chiếc ghe có mui bạt trắng.",
+    "video_id": "L28_V013",
+    "range_frame_id": [
+      14144,
+      14156
+    ],
+    "shot_id": [
+      "shot0114"
+    ]
+  },
+  {
+    "query_id": "q056",
+    "Queries": "Đoạn video có một người đàn ông đội nón vải màu be mặc áo dài tay trắng ngồi xổm trên chiếc xuồng gỗ nhỏ, hai tay kéo tấm lưới đánh cá lên khỏi mặt nước.",
+    "video_id": "L28_V013",
+    "range_frame_id": [
+      21484,
+      21496
+    ],
+    "shot_id": [
+      "shot0171"
+    ]
+  },
+  {
+    "query_id": "q057",
+    "Queries": "Đoạn video quay con đường trước một khu chợ có nhà lồng mái tôn xanh lá hình răng cưa. Bên phải là các sạp bày mận đỏ, ổi và rau xanh trong rổ nhựa.",
+    "video_id": "L28_V014",
+    "range_frame_id": [
+      7164,
+      7176
+    ],
+    "shot_id": [
+      "shot0053"
+    ]
+  },
+  {
+    "query_id": "q058",
+    "Queries": "Đoạn video quay từ ngoài hàng rào sắt trắng vào hiên một căn nhà sàn gỗ. Một phụ nữ mặc áo hoa ngồi xổm cầm chén ăn cơm, tiền cảnh là một con chó lông đen.",
+    "video_id": "L28_V014",
+    "range_frame_id": [
+      11344,
+      11356
+    ],
+    "shot_id": [
+      "shot0087"
+    ]
+  },
+  {
+    "query_id": "q059",
+    "Queries": "Đoạn video có một phụ nữ mặc áo hoa nhiều màu và quần hồng đeo khẩu trang đi bộ giữa con hẻm bê tông nhỏ. Bên phải dựng một chiếc xe máy có biển số 67A1-714.58.",
+    "video_id": "L28_V014",
+    "range_frame_id": [
+      11789,
+      11801
+    ],
+    "shot_id": [
+      "shot0093"
+    ]
+  },
+  {
+    "query_id": "q060",
+    "Queries": "Đoạn video quay cận nhiều xe máy chở hàng cồng kềnh xếp hàng chờ qua phà. Giữa khung hình là một phụ nữ đội nón bảo hiểm xanh dương chở các bao ni lông đen lớn.",
+    "video_id": "L28_V014",
+    "range_frame_id": [
+      20314,
+      20326
+    ],
+    "shot_id": [
+      "shot0165"
+    ]
+  },
+  {
+    "query_id": "q061",
+    "Queries": "Đoạn video quay flycam xuống một dòng kênh nước màu xanh lục uốn cong chia đôi khung hình. Bên trái là xóm nhà mái tôn san sát, bên phải là rừng cây và một khoảnh đất cháy sạm.",
+    "video_id": "L28_V015",
+    "range_frame_id": [
+      2549,
+      2561
+    ],
+    "shot_id": [
+      "shot0014"
+    ]
+  },
+  {
+    "query_id": "q062",
+    "Queries": "Đoạn video quay trong một khu rừng cây thân cao, tiền cảnh bên trái là một thân cây lớn có gắn tấm biển gỗ nền nâu chữ đỏ. Phía sau có bức tường đá xếp thấp.",
+    "video_id": "L28_V015",
+    "range_frame_id": [
+      10979,
+      10991
+    ],
+    "shot_id": [
+      "shot0060"
+    ]
+  },
+  {
+    "query_id": "q063",
+    "Queries": "Đoạn video quay từ mặt kênh nước lặng vào bờ, tiền cảnh là những bụi dừa nước mọc sát mép nước. Phía sau bờ có một căn nhà mái tôn trắng khuất sau hàng cây.",
+    "video_id": "L28_V015",
+    "range_frame_id": [
+      22549,
+      22561
+    ],
+    "shot_id": [
+      "shot0136"
+    ]
+  },
+  {
+    "query_id": "q064",
+    "Queries": "Đoạn video quay flycam xuống một quảng trường lát gạch trắng, giữa là bức tượng đài lớn màu trắng trên bệ cao. Xung quanh trồng hai hàng cây cau vua thẳng tắp.",
+    "video_id": "L28_V015",
+    "range_frame_id": [
+      27294,
+      27306
+    ],
+    "shot_id": [
+      "shot0169"
+    ]
+  },
+  {
+    "query_id": "q065",
+    "Queries": "Đoạn video có một người đàn ông mặc áo xanh dương đội nón vải đang giơ tay cầm cây sào dài chặt tàu lá trong một rừng dừa nước rậm rạp.",
+    "video_id": "L28_V016",
+    "range_frame_id": [
+      7659,
+      7671
+    ],
+    "shot_id": [
+      "shot0052"
+    ]
+  },
+  {
+    "query_id": "q066",
+    "Queries": "Đoạn video quay nhiều người đang chằm lá dừa nước dưới mái hiên. Tiền cảnh bên trái là một cô gái mặc bộ đồ ngủ hồng in hình mặt cười đang ngồi bệt đan lá.",
+    "video_id": "L28_V016",
+    "range_frame_id": [
+      11974,
+      11986
+    ],
+    "shot_id": [
+      "shot0074"
+    ]
+  },
+  {
+    "query_id": "q067",
+    "Queries": "Đoạn video có một người đàn ông mặc áo thun dài tay xanh dương quay lưng vác một bó lá dừa nước lên vai. Dưới đất la liệt các tàu lá đã chằm.",
+    "video_id": "L28_V016",
+    "range_frame_id": [
+      12194,
+      12206
+    ],
+    "shot_id": [
+      "shot0075"
+    ]
+  },
+  {
+    "query_id": "q068",
+    "Queries": "Đoạn video có một người đàn ông mặc áo thun vàng nhạt đeo kính đứng trên bờ đầm nhìn xuống. Dưới nước là chiếc xuồng composite trắng viền xanh lá, trên xuồng một người đội nón vành rộng đang chống sào.",
+    "video_id": "L28_V016",
+    "range_frame_id": [
+      21874,
+      21886
+    ],
+    "shot_id": [
+      "shot0152"
+    ]
+  },
+  {
+    "query_id": "q069",
+    "Queries": "Đoạn video quay cận một tấm bia đá granit hình vòm, mặt bia khắc dòng tiêu đề Đông Hồ Ấn Nguyệt và bên dưới là một bài thơ nhiều dòng.",
+    "video_id": "L28_V016",
+    "range_frame_id": [
+      23989,
+      24001
+    ],
+    "shot_id": [
+      "shot0162"
+    ]
+  },
+  {
+    "query_id": "q070",
+    "Queries": "Đoạn video có hai người đàn ông đang làm cỏ trong vườn. Người phía trước mặc áo sơ mi xanh dương cầm cán cuốc dài, người phía sau đội nón tai bèo cầm bao tải vàng.",
+    "video_id": "L28_V017",
+    "range_frame_id": [
+      6804,
+      6816
+    ],
+    "shot_id": [
+      "shot0061"
+    ]
+  },
+  {
+    "query_id": "q071",
+    "Queries": "Đoạn video có một người đàn ông trung niên tóc hoa râm mặc áo sơ mi xanh dương đang đứng cười nói giữa vườn tiêu, hai bên là các trụ tiêu leo kín lá xanh.",
+    "video_id": "L28_V017",
+    "range_frame_id": [
+      8484,
+      8496
+    ],
+    "shot_id": [
+      "shot0077"
+    ]
+  },
+  {
+    "query_id": "q072",
+    "Queries": "Đoạn video quay xuyên qua khe giữa hai khối đá lớn trong hang núi. Phía dưới xa là lối đi treo dây đèn lồng đỏ và một cây phượng đang nở hoa đỏ rực.",
+    "video_id": "L28_V017",
+    "range_frame_id": [
+      11514,
+      11526
+    ],
+    "shot_id": [
+      "shot0097"
+    ]
+  },
+  {
+    "query_id": "q073",
+    "Queries": "Đoạn video có ba người ngồi ăn cơm quanh một chiếc bàn tròn mặt inox trước sân nhà. Phía sau là căn nhà có cột sơn xanh ngọc và một xe máy chở giỏ hàng lớn màu xanh.",
+    "video_id": "L28_V017",
+    "range_frame_id": [
+      19659,
+      19671
+    ],
+    "shot_id": [
+      "shot0163"
+    ]
+  },
+  {
+    "query_id": "q074",
+    "Queries": "Đoạn video quay flycam xuống một thị trấn ven kênh có nhiều ghe thuyền đậu. Giữa khung hình có dòng chữ màu vàng ghi Vẻ đẹp nơi vùng đất Kiên Lương.",
+    "video_id": "L28_V018",
+    "range_frame_id": [
+      1129,
+      1141
+    ],
+    "shot_id": [
+      "shot0008"
+    ]
+  },
+  {
+    "query_id": "q075",
+    "Queries": "Đoạn video có một người đàn ông mặc áo thun sọc ngang màu be nâu đang đứng nói và khua hai tay giữa vườn chanh. Phía sau là dãy nhà kho mái tôn trắng.",
+    "video_id": "L28_V018",
+    "range_frame_id": [
+      11644,
+      11656
+    ],
+    "shot_id": [
+      "shot0090"
+    ]
+  },
+  {
+    "query_id": "q076",
+    "Queries": "Đoạn video có một vách núi đá vôi xám dựng đứng chiếm nửa khung hình bên trái, mặt đá nứt nẻ thành nhiều rãnh dọc. Bên phải là hai cây cau vua thân thẳng vươn cao.",
+    "video_id": "L28_V018",
+    "range_frame_id": [
+      13694,
+      13706
+    ],
+    "shot_id": [
+      "shot0100"
+    ]
+  },
+  {
+    "query_id": "q077",
+    "Queries": "Đoạn video có ba người nông dân đội nón lá đang lội giữa ruộng lúa non. Người bên trái mặc áo tím, người giữa mặc áo kẻ caro hồng, người bên phải mặc áo vàng nhạt.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      5739,
+      5751
+    ],
+    "shot_id": [
+      "shot0041"
+    ]
+  },
+  {
+    "query_id": "q078",
+    "Queries": "Đoạn video có một chiếc ghe cá sơn màu xanh dương đậu sát bờ kênh nước đục. Mặt nước tiền cảnh phủ đầy đám lục bình.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      6844,
+      6856
+    ],
+    "shot_id": [
+      "shot0048"
+    ]
+  },
+  {
+    "query_id": "q079",
+    "Queries": "Đoạn video quay flycam xuống vùng đồng ruộng ngập nước chia thành nhiều ô vuông, phía xa là một ngọn núi đơn độc có cột ăng ten. Giữa khung hình có dòng chữ vàng ghi Trích tác phẩm Hòn Đất – nhà văn Anh Đức.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      10394,
+      10406
+    ],
+    "shot_id": [
+      "shot0067"
+    ]
+  },
+  {
+    "query_id": "q080",
+    "Queries": "Đoạn video quay một bến ghe trên sông, tiền cảnh bên trái là cây dừa nghiêng trĩu buồng quả xanh. Dưới nước đậu san sát nhiều chiếc ghe gỗ sơn xanh lá và xanh dương.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      16939,
+      16951
+    ],
+    "shot_id": [
+      "shot0121"
+    ]
+  },
+  {
+    "query_id": "q081",
+    "Queries": "Đoạn video quay flycam một thị trấn nằm dọc hai bên con kênh nước xanh lục, nhà cửa mái tôn và mái ngói xen kẽ dày đặc. Chân trời có một ngọn núi thấp nhô lên.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      17254,
+      17266
+    ],
+    "shot_id": [
+      "shot0122"
+    ]
+  },
+  {
+    "query_id": "q082",
+    "Queries": "Đoạn video quay một lò làm gốm thủ công, dưới nền xi măng xếp la liệt hàng chục chiếc lu đất sét chưa nung. Giữa khung hình một phụ nữ mặc áo kẻ caro ngồi ôm một chiếc lu đang tạo hình.",
+    "video_id": "L28_V019",
+    "range_frame_id": [
+      24204,
+      24216
+    ],
+    "shot_id": [
+      "shot0184"
+    ]
+  },
+  {
+    "query_id": "q083",
+    "Queries": "Đoạn video quay flycam xuống một lễ hội đông nghịt người bên bờ sông, hàng nghìn người chen chúc trước khu đền mái ngói đỏ. Dưới sông có một chiếc bè thả hoa sen hồng lớn.",
+    "video_id": "L28_V020",
+    "range_frame_id": [
+      7769,
+      7781
+    ],
+    "shot_id": [
+      "shot0041"
+    ]
+  },
+  {
+    "query_id": "q084",
+    "Queries": "Đoạn video quay một lối mòn đất sình lầy chạy giữa hai luống dứa gai, hai bên là vườn cau thân thẳng cao vút mọc dày.",
+    "video_id": "L28_V020",
+    "range_frame_id": [
+      15789,
+      15801
+    ],
+    "shot_id": [
+      "shot0091"
+    ]
+  },
+  {
+    "query_id": "q085",
+    "Queries": "Đoạn video có một ao nước tù màu xanh rêu nằm giữa vườn, quanh bờ ao trồng dày những bụi dứa gai lá nhọn. Phía sau là hàng cây cau thân thẳng.",
+    "video_id": "L28_V020",
+    "range_frame_id": [
+      20189,
+      20201
+    ],
+    "shot_id": [
+      "shot0112"
+    ]
+  },
+  {
+    "query_id": "q086",
+    "Queries": "Đoạn video có một người đàn ông lớn tuổi tóc bạc mặc áo khoác xanh lá đang cúi xuống buộc miệng một bao tải trắng in chữ 511NF màu đỏ.",
+    "video_id": "L28_V020",
+    "range_frame_id": [
+      22409,
+      22421
+    ],
+    "shot_id": [
+      "shot0123"
+    ]
+  },
+  {
+    "query_id": "q087",
+    "Queries": "Đoạn video có hai người đang ngồi đan giỏ bằng cỏ bàng dưới bóng cây. Người đàn ông bên trái mặc áo thun xanh rêu đang đan một chiếc giỏ hình trụ.",
+    "video_id": "L28_V021",
+    "range_frame_id": [
+      13484,
+      13496
+    ],
+    "shot_id": [
+      "shot0083"
+    ]
+  },
+  {
+    "query_id": "q088",
+    "Queries": "Đoạn video có nhiều chồng giỏ đan bằng cỏ bàng xếp cao trước sân một căn nhà có hàng rào sắt trắng. Bên trái là một cuộn chiếu cói lớn đặt trên giá sắt.",
+    "video_id": "L28_V021",
+    "range_frame_id": [
+      15279,
+      15291
+    ],
+    "shot_id": [
+      "shot0098"
+    ]
+  },
+  {
+    "query_id": "q089",
+    "Queries": "Đoạn video quay một gian thờ, chính giữa treo một mặt trống đồng cỡ lớn màu vàng chạm hoa văn ngôi sao. Phía trước là chiếc ngai sơn son thếp vàng có bài vị đỏ.",
+    "video_id": "L28_V021",
+    "range_frame_id": [
+      24064,
+      24076
+    ],
+    "shot_id": [
+      "shot0143"
+    ]
+  },
+  {
+    "query_id": "q090",
+    "Queries": "Đoạn video quay cận một bức tượng đồng bán thân một vị vua đội mũ miện, tay cầm cây quyền trượng có chuôi hình ngôi sao. Phía sau lưng tượng là mặt trống đồng lớn.",
+    "video_id": "L28_V021",
+    "range_frame_id": [
+      26204,
+      26216
+    ],
+    "shot_id": [
+      "shot0151"
+    ]
+  },
+  {
+    "query_id": "q091",
+    "Queries": "Đoạn video có một khám thờ chạm gỗ thếp vàng trong đình, khung khám sơn đỏ viền vàng chạm rồng. Bên phải treo chiếc lọng vàng có tua rua đỏ.",
+    "video_id": "L28_V021",
+    "range_frame_id": [
+      27274,
+      27286
+    ],
+    "shot_id": [
+      "shot0158"
+    ]
+  },
+  {
+    "query_id": "q092",
+    "Queries": "Đoạn video quay từ trên cao xuống một cánh đồng dứa mênh mông chia thành nhiều luống dài xen kẽ rãnh nước. Giữa khung hình có hai người nông dân đang cúi xuống thu hoạch.",
+    "video_id": "L28_V022",
+    "range_frame_id": [
+      8699,
+      8711
+    ],
+    "shot_id": [
+      "shot0048"
+    ]
+  },
+  {
+    "query_id": "q093",
+    "Queries": "Đoạn video quay ngang một bờ mương nước đục màu vàng nâu, phía trên bờ đất là hàng dứa gai mọc san sát thành luống. Mặt nước in bóng ngược của hàng lá dứa.",
+    "video_id": "L28_V022",
+    "range_frame_id": [
+      14279,
+      14291
+    ],
+    "shot_id": [
+      "shot0081"
+    ]
+  },
+  {
+    "query_id": "q094",
+    "Queries": "Đoạn video quay một ruộng dứa rộng trồng thành từng luống dài, lá dứa xanh xám nhọn phủ kín mặt đất, giữa các luống là rãnh đất trống.",
+    "video_id": "L28_V022",
+    "range_frame_id": [
+      16829,
+      16841
+    ],
+    "shot_id": [
+      "shot0093"
+    ]
+  },
+  {
+    "query_id": "q095",
+    "Queries": "Đoạn video có một cây dừa lớn nghiêng chiếm trọn nửa khung hình bên phải, tàu lá rủ xuống che gần hết nền trời. Phía sau xa là ruộng dứa trải rộng.",
+    "video_id": "L28_V022",
+    "range_frame_id": [
+      26899,
+      26911
+    ],
+    "shot_id": [
+      "shot0150"
+    ]
+  },
+  {
+    "query_id": "q096",
+    "Queries": "Đoạn video quay một xưởng làm khô cá ven sông. Bên trái xếp một dãy lu sành màu nâu cỡ lớn, xung quanh có bốn năm phụ nữ ngồi bệt làm cá trong các rổ nhựa.",
+    "video_id": "L28_V023",
+    "range_frame_id": [
+      19044,
+      19056
+    ],
+    "shot_id": [
+      "shot0094"
+    ]
+  },
+  {
+    "query_id": "q097",
+    "Queries": "Đoạn video quay cận từ trên xuống một phụ nữ tóc buộc đuôi ngựa mặc áo họa tiết chấm bi đen đang đeo găng tay làm cá. Bên phải là chiếc rổ nhựa màu xanh lá đầy cá lóc.",
+    "video_id": "L28_V023",
+    "range_frame_id": [
+      19864,
+      19876
+    ],
+    "shot_id": [
+      "shot0102"
+    ]
+  },
+  {
+    "query_id": "q098",
+    "Queries": "Đoạn video có một phụ nữ trung niên mặc áo thun sọc ngang đen trắng đang ngồi nói chuyện và khoa tay. Phía sau là các kệ sắt xanh xếp kín hàng trăm hũ mắm dán nhãn đỏ.",
+    "video_id": "L28_V023",
+    "range_frame_id": [
+      23414,
+      23426
+    ],
+    "shot_id": [
+      "shot0126"
+    ]
+  },
+  {
+    "query_id": "q099",
+    "Queries": "Đoạn video có một đoàn xe tải thùng phủ bạt đen xếp hàng chờ qua trạm kiểm soát. Bên phải là chốt gác sơn trắng xanh và hai nhân viên mặc đồng phục xanh dương.",
+    "video_id": "L28_V024",
+    "range_frame_id": [
+      7304,
+      7316
+    ],
+    "shot_id": [
+      "shot0047"
+    ]
+  },
+  {
+    "query_id": "q100",
+    "Queries": "Đoạn video có một cửa hàng bán ghe xuồng composite ven đường, biển hiệu lớn màu trắng chữ đỏ ghi THÔNG THỦY. Trước cửa dựng nghiêng nhiều chiếc vỏ lãi sơn đỏ trắng.",
+    "video_id": "L28_V024",
+    "range_frame_id": [
+      25044,
+      25056
+    ],
+    "shot_id": [
+      "shot0194"
+    ]
+  }
+]
