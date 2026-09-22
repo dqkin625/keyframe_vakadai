@@ -5,19 +5,50 @@ Trích keyframe từ video, sinh ảnh và metadata. Chạy local trên GPU, **k
 ## Cài đặt
 
 ```bash
+git clone https://github.com/dqkin625/keyframe_vakadai.git
+cd keyframe_vakadai
 python -m venv .venv
 .venv/Scripts/pip install -r requirements.txt
 ```
 
-Cần GPU NVIDIA và `ffmpeg` trong PATH. Trọng số AutoShot đặt ở `models/autoshot_ckpt_0_200_0.pth`.
+**GPU NVIDIA**: bắt buộc. `config.yaml` để `gpu_decode: true` và AutoShot chạy trên CUDA.
+Driver cũ (vd 528.x, chỉ tới CUDA 12.1) phải cài đúng bản torch cu121, nếu không sẽ lỗi
+`cudaErrorDevicesUnavailable`:
+
+```bash
+.venv/Scripts/pip install torch==2.5.1+cu121 torchvision==0.20.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+```
+
+**ffmpeg**: KHÔNG cần cài vào máy. `imageio-ffmpeg` trong `requirements.txt` đã đóng gói sẵn
+ffmpeg trong venv.
+
+**Trọng số AutoShot** (`models/autoshot_ckpt_0_200_0.pth`, 57 MB): KHÔNG cần tải thủ công.
+Lần chạy đầu tiên `src/frame_sampling/shot_detector.py` tự tải về `models/` từ HuggingFace
+và in ra `[AutoShot] tải weights lần đầu (~57MB)`. Thư mục `models/` nằm trong `.gitignore`
+nên không có trong repo — đó là lý do phải tải.
+
+Chỉ khi máy chặn mạng ra HuggingFace thì tải tay rồi đặt vào `models/`:
+
+```bash
+mkdir models
+curl -L -o models/autoshot_ckpt_0_200_0.pth https://huggingface.co/backseollgi/AutoShot/resolve/main/ckpt_0_200_0.pth
+```
+
+File đúng phải nặng **57.243.097 byte**. Tải thiếu sẽ lỗi `PytorchStreamReader failed`.
+
+**API key**: KHÔNG cần cho bước keyframe. `run_keyframes_only.py` dừng trước bước caption,
+nên `.env` chỉ cần khi chạy caption Gemma (xem `.env.example`).
 
 ## Chạy
 
-Đặt video vào `data/video/<thư mục>/` rồi:
+Đặt video vào `data/video/<thư mục>/` (thư mục này nằm trong `.gitignore`, phải tự tạo), rồi:
 
 ```bash
+mkdir logs
 python -u scripts/run_keyframes_only.py data/video/Videos_L26_a > logs/L26_a.log 2>&1
 ```
+
+`mkdir logs` chỉ cần làm 1 lần — shell tạo được file log nhưng không tạo được thư mục chứa nó.
 
 Đổi tên thư mục là chạy được bộ khác. Tham số đã đặt sẵn trong `config.yaml`, không cần chỉnh.
 
